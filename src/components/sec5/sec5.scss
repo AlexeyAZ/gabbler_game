@@ -1,0 +1,117 @@
+.sec5 {
+	background-image: url($img + 'sec5-bg-rect.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: white;
+	position: relative;
+
+	&:before {
+		content: "";
+		background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+		display: none;
+		opacity: 0.7;
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 100px;
+		width: 100%;
+		z-index: 1;
+
+		@include media(w768) {
+			display: block;
+		}
+	}
+
+	@include media(w1700) {
+		padding-top: 340px;
+		padding-bottom: 260px;
+	}
+
+	@include media(w768) {
+		background-image: url($img + 'sec4-bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: left -40vw center;
+		color: white;
+		padding-top: 30px;
+		padding-bottom: 0;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+
+		@include media(w1024) {
+			flex-flow: column;
+			flex-direction: column-reverse;
+			text-align: center;
+			max-width: 480px;
+		}
+	}
+
+	&__item {
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: 0;
+
+		&_slider {
+			padding-right: 20px;
+			position: relative;
+
+			@include media(w1024) {
+				margin-bottom: 50px;
+				padding-right: 0;
+			}
+
+			@include media(w768) {
+				margin-bottom: 0;
+			}
+		}
+
+		&_actions {
+
+			@include media(w1024) {
+				margin-bottom: 80px;
+			}
+
+			@include media(w768) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&__slider {
+		color: white;
+		position: relative;
+
+		&:after {
+			content: "";
+			background-image: radial-gradient(#111111, rgba(6,6,6,0));
+			position: absolute;
+		}
+	}
+
+	&__slider-card {
+		box-shadow: 0 17px 20px rgba(22,33,43,0.7);
+	}
+
+	&__title {
+		color: $pink-dark;
+
+		@include media(w768) {
+			color: white;
+		}
+	}
+
+	&__img {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+
+	&__clouds {
+		z-index: 2;
+	}
+}

@@ -1,0 +1,32 @@
+include ../char/char
+include ../load-badges/load-badges
+include ../header/header
+
+
+mixin sec1()
+	.sec1&attributes(attributes)
+		+header
+		.content-center.sec1__content-center
+			+container
+				.sec1__content
+					+iphone.sec1__iphone
+					.sec1__text
+						img(src=img + 'world-castle-icon.png').sec1__game-icon
+						h1.color-pink-dark.
+							МОБИЛЬНАЯ ИГРА ДЛЯ<br class="d-none d-pc-inline">
+							ИЗУЧЕНИЯ АНГЛИЙСКОГО ЯЗЫКА
+						h5.color-gray-darken.mb-5.
+							СТАНЬ ГЛАВОЙ АНГЛИЙСКОГО КОРОЛЕВСТВА
+						+load-badges.d-tablet-block.d-none
+			+load-badges.d-tablet-none.sec1__bages-mobile
+			img(src=img + 'sec1-tower.png').sec1__tower
+			+clouds
+			//- .sec1__blue-bg
+				img(src=img + 'sec2-bg-top.png').sec1__blue-bg-img.d-none.d-pc-block
+				img(src=img + 'sec2-bg-top-line.png').sec1__blue-bg-line.d-none.d-pc-block
+
+				img(src=img + 'sec2-bg-top-tablet.png').sec1__blue-bg-img.d-pc-none
+				img(src=img + 'sec2-bg-top-line-tablet.png').sec1__blue-bg-line.d-pc-none
+
+				each item, index in sec1Chars
+					+char(item)(class="sec1__char sec1__char_" + (index + 1))

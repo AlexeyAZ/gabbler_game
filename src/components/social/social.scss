@@ -1,0 +1,35 @@
+.social {
+	
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__list-item {
+		margin: 0 10px;
+
+		&_s {
+			margin: 0 5px;
+		}
+	}
+
+	&__list-icon {
+		font-size: 2.5rem;
+
+		&_vk {
+			font-size: 2rem;
+		}
+
+		&_size_s {
+			font-size: 1.5rem;
+
+			&.social__list-icon_vk {
+				font-size: 1.2rem;
+			}
+
+			&.social__list-icon_fb {
+				font-size: 1.7rem;
+			}
+		}
+	}
+}

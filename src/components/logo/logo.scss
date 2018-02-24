@@ -1,0 +1,20 @@
+.logo {
+	
+	&__icon {
+		height: 100%;
+		width: 240px;
+
+		@include media(w768) {
+			display: block;
+			width: 80px;
+		}
+	}
+}
+
+.gabbler-logo {
+
+	&__icon {
+		height: 100%;
+		width: 160px;
+	}
+}

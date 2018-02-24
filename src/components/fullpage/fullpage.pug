@@ -1,0 +1,21 @@
+include ../sec1/sec1
+include ../sec2/sec2
+include ../sec3/sec3
+include ../sec4/sec4
+include ../sec5/sec5
+include ../sec6/sec6
+include ../sec7/sec7
+include ../footer/footer
+
+
+mixin fullpage()
+	.fullpage
+		+sec1(data-sec="1", data-nav-color="dark").section
+		+sec2(data-sec="2", data-nav-color="light", data-offset="-100").section
+		+sec3(data-sec="3", data-nav-color="dark").section
+		+sec4(data-sec="4", data-nav-color="light", data-offset="-100").section
+		+sec5(data-sec="5", data-nav-color="dark").section
+		+sec6.section
+		+sec7.section.fp-auto-height
+		+footer.section.fp-auto-height
+	//- +sec6(data-sec="6", data-nav-color="light")

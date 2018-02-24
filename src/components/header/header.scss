@@ -1,0 +1,152 @@
+.header {
+	// background-color: rgba(255,255,255,0.8);
+	padding-top: 45px;
+	padding-bottom: 60px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: $header-z-index;
+
+	@include media(w1024) {
+		background-color: white;
+		padding: 0;
+		height: $header-height-tablet;
+	}
+
+	@include media(w768) {
+		// background-color: transparent;
+		height: $header-height-mobile;
+	}
+
+	&__wrapper {
+		position: relative;
+		height: 100%;
+	}
+
+	&__menu-btn {
+		background-color: $gray-darken;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: $header-height-tablet;
+		width: $header-height-tablet;
+		z-index: 1;
+
+		@include media(w1024) {
+			display: flex;
+		}
+
+		@include media(w768) {
+			height: $header-height-mobile;
+			width: $header-height-mobile;
+		}
+	}
+
+	&__menu-btn-icon {
+		width: 25%;
+	}
+	
+	&__container {
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		@include media(w1024) {
+			padding-left: calc(30px + #{$header-height-tablet});
+		}
+
+		@include media(w768) {
+			justify-content: center;
+			padding-left: $side-padding-mobile;
+		}
+	}
+
+	&__item {
+		position: relative;
+
+		&_social {
+			margin-right: 30px;
+
+			@include media(w1024) {
+				display: none;
+			}
+		}
+
+		&_register {
+			display: flex;
+			flex-flow: column;
+			align-items: center;
+
+			@include media(w768) {
+				display: none;
+			}
+		}
+	}
+
+	&__spacer {
+		margin-left: auto;
+
+		@include media(w768) {
+			display: none;
+		}
+	}
+
+	&__logo-link {
+		transform: translateY(-50%);
+		display: block;
+		position: absolute;
+		left: 180px;
+		top: 50%;
+
+		&_outer {
+
+			@include media(w1280) {
+				left: $side-padding-pc;
+			}
+
+			@include media(w1024) {
+				display: none;
+			}
+		}
+
+		&_inner {
+			display: none;
+
+			@include media(w1024) {
+				display: block;
+				position: static;
+			}
+		}
+
+		@include media(w1024) {
+			transform: translateY(0);
+		}
+	}
+
+	&__logo-icon {
+		height: 100%;
+		width: 240px;
+
+		@include media(w768) {
+			display: block;
+			width: 80px;
+		}
+	}
+
+	&__people-count {
+		transform: translateX(-50%);
+		position: absolute;
+		top: calc(100% + 10px);
+		left: 50%;
+		letter-spacing: 1px;
+		white-space: nowrap;
+
+		@include media(w1024) {
+			display: none;
+		}
+	}
+}

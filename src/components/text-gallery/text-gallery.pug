@@ -1,0 +1,104 @@
+mixin text-gallery(options={version})
+	-
+		var textGallery = [
+			[
+				{
+					title: 'Первая игра которая<br> помогает изучать язык',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Развивай и<br> захватывай замки',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Соревнуйся<br> с друзьями',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Играй как в онлайне<br> как и в офлайне',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Играй на любом<br> устройстве',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Онлайн<br> статистика',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				}
+			],
+			[
+				{
+					title: 'Сленговые<br> словообороты',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Популярные<br> наборы слов',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Наборы<br> для професий',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Создание<br> наборов',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				},
+				{
+					title: 'Качественная озвучка<br> слов и фраз',
+					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
+				}
+			]
+		];
+
+		var galleryItems = textGallery[options.version]
+
+	mixin text-list(items)
+		-
+			var listAlignCls = options.version === 1 ? 'text-gallery__list_left' : '';
+			var itemAlignCls = options.version === 1 ? 'text-gallery__list-item_left' : '';
+			var linkAlignCls = options.version === 1 ? 'text-gallery__list-link_left' : '';
+
+			var itemColorCls = options.version === 1 ? 'text-gallery__list-item_gray' : '';
+			var linkColorCls = options.version === 1 ? 'text-gallery__list-link_gray' : '';
+
+			var itemCls = itemAlignCls + ' ' + itemColorCls;
+			var linkCls = linkAlignCls + ' ' + linkColorCls;
+
+		ul(class=listAlignCls).text-gallery__list
+			each item, index in items
+				li(class=(index === 2 ? 'text-gallery__list-item_active' : '') + ' ' + itemCls).text-gallery__list-item
+					a(href="", class=linkCls).text-gallery__list-link
+						!= item.title
+
+	mixin text-description(items)
+		each item in items
+			.text-gallery__description
+				h2(class=(options.version === 1 ? 'color-pink-dark' : ''))
+					!= item.title
+				p
+					!= item.text
+
+	.text-gallery&attributes(attributes)
+
+		if options.version === 0
+			.text-gallery__item.text-gallery__item_list
+				+text-list(galleryItems)
+
+			.text-gallery__item.text-gallery__item_center
+				+iphone.text-gallery__iphone
+					//- img(src=img + 'people.png').text-gallery__iphone-people
+
+			.text-gallery__item.text-gallery__item_description
+				+text-description(galleryItems)
+
+		if options.version === 1
+
+			.text-gallery__item.text-gallery__item_description
+				+text-description(galleryItems)
+
+			.text-gallery__item.text-gallery__item_center
+				+iphone.text-gallery__iphone
+			
+			.text-gallery__item.text-gallery__item_list
+				+text-list(galleryItems)

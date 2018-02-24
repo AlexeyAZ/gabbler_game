@@ -1,0 +1,11 @@
+extends ../components/default-layout/default-layout
+
+include ../components/fullpage/fullpage
+
+block vars
+	- var title = 'Main'
+
+block content
+	a(href="").removeFullpage.
+		сломать fullpage
+	+fullpage

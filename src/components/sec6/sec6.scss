@@ -1,0 +1,81 @@
+.sec6 {
+	$bottom-img-height: 200px;
+	background-image: url($img + 'sec6-bg-rect.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	position: relative;
+
+	&:after {
+		content: "";
+		background-image: url($img + 'sec2-bg-bottom.png');
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: $bottom-img-height;
+		width: 100%;
+
+		@include media(w1024) {
+			background-image: url($img + 'sec2-bg-bottom-tablet.png');
+		}
+	}
+
+	@include media(w1700) {
+		padding: 354px 0 522px;
+	}
+
+	@include media(w768) {
+		margin-top: -20px;
+		padding: 30px 0 20px;
+	}
+
+	&__wrap {
+		height: 100%;
+	}
+
+	&__container {
+		padding-top: 250px;
+		// padding-left: 25%;
+		// display: flex;
+		// align-items: center;
+
+		// @include media(w1024) {
+		// 	justify-content: center;
+		// }
+
+		// @include media(w768) {
+		// 	flex-flow: column;
+		// 	flex-direction: column-reverse;
+		// 	text-align: center;
+		// }
+
+		@include media(w1700) {
+			padding-top: 0;
+		}
+	}
+
+	&__content {
+		margin-left: auto;
+		max-width: 440px;
+	}
+
+	&__title {
+
+		@include media(w768) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__castle {
+		position: absolute;
+		bottom: 230px;
+		right: 44%;
+	}
+
+	&__achievements {
+		bottom: $bottom-img-height;
+	}
+}

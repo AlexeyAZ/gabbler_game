@@ -1,0 +1,10 @@
+mixin logo(options={color})
+	-
+		var imgSrc = 'gabbler-labs-logo';
+		var imgColor = typeof options.color !== 'undefined' ? imgSrc + '-' + options.color : imgSrc;
+	a(href='/').logo&attributes(attributes)
+		img(src=img + imgColor + '.svg').logo__icon
+
+mixin gabblerLogo
+	a(href='/').gabbler-logo&attributes(attributes)
+		img(src=img + 'gabbler-icon.svg').gabbler-logo__icon

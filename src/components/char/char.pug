@@ -1,0 +1,18 @@
+mixin char(options={castles, words, name, icon})
+	.char(class=(typeof options.icon !== 'undefined' ? '' : 'char_small'))&attributes(attributes)
+		if typeof options.icon !== 'undefined'
+			.char__img
+				img(src=img + options.icon).char__img-icon
+		.char__line
+		.char__name
+			=options.name
+		if typeof options.icon !== 'undefined'
+			.char__status
+				.char__status-item.char__status-item_castles
+					=options.castles
+					.char__status-description.
+						Замков
+				.char__status-item.char__status-item_words
+					=options.words
+					.char__status-description.
+						Слов

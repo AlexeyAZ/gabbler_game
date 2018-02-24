@@ -1,0 +1,75 @@
+include ../info-card/info-card
+include ../load-badges/load-badges
+include ../card-slider/card-slider
+
+
+mixin sec5()
+	-
+		var sec5Slider = {
+			relax: {
+				name: 'Отдых',
+				content: [{
+					img: 'relax-img.png',
+					title: 'ОТДЫХ',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности.',
+					body: [
+						{
+							title: 'Beach',
+							text: 'пляж, отмель, взморье, галька, отлогий морской берег'
+						},
+						{
+							title: 'Way to the sea',
+							text: 'Дорога к морю'
+						},
+						{
+							title: 'Hotel',
+							text: 'Отель'
+						},
+						{
+							title: 'Bus stop',
+							text: 'Автобусная остановка, остановка автобуса'
+						}
+					]
+				}]
+			},
+			marketer: {
+				name: 'Маркетолог'
+			},
+			teacher: {
+				name: 'Учитель'
+			},
+			programmer: {
+				name: 'Программист'
+			},
+			designer: {
+				name: 'Дизайнер'
+			},
+			surgeon: {
+				name: 'Хирург'
+			},
+		};
+
+	.sec5&attributes(attributes)
+		//- .content-center
+		+container.sec5__container
+			.sec5__item.d-none.d-tablet-block.d-pc-none
+				+load-badges
+			.sec5__item.sec5__item_slider
+				//- +card-slider.js-sec5-slider
+				.sec5__slider
+					each item in sec5Slider.relax.content
+						+info-card({item: item}).sec5__slider-card
+			.sec5__item.sec5__item_actions
+				h2.sec5__title.
+					БОЛЕЕ 150 НАБОРОВ<br>
+					ДЛЯ ИЗУЧЕНИЯ
+				p.mb-8.
+					Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития
+				.sec5__tags.mb-3
+					each value, key in sec5Slider
+						+btnSmall({text: value.name, bg: 'blue', extend: ['hashtag']}).mr-2.mb-1
+				+load-badges.d-none.d-pc-block
+		img(src=img + 'sec5-img.png').sec5__img
+		+clouds.sec5__clouds
+		//- +container
+			img#photo(src=img + 'action-img.png', style="width:50%")

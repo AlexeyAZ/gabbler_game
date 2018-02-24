@@ -1,0 +1,27 @@
+mixin btn(options={type, href, text})
+	if typeof options.type !== 'undefined' || options.type === 'btn'
+	a(href=(typeof options.href !== 'undefined' ? options.href : '')).btn&attributes(attributes)
+		span.btn__inner
+			!= (typeof options.text !== 'undefined' ? options.text : 'РЕГИСТРАЦИЯ')
+
+mixin btnSmall(options={type, href, text, bg, active, extend: []})
+	-
+		var btnDefaultCls = 'btn-small';
+		var btnBg = typeof options.bg !== 'undefined' ? btnDefaultCls + '_bg_' + options.bg : '';
+		var btnState = typeof options.active !== 'undefined' ? 'state_active' : '';
+		var btnExtendCls = ' ';
+		var btnCls;
+
+		if (typeof options.extend !== 'undefined') {
+			for (var i = 0; i < options.extend.length; i++) {
+				btnExtendCls += btnDefaultCls + '_' + options.extend[i] + ' ';
+			}
+		}
+
+		btnCls = btnBg + ' ' + btnState + btnExtendCls;
+		
+	if typeof options.type !== 'undefined' || options.type === 'btn'
+	a(href=(typeof options.href !== 'undefined' ? options.href : ''), class=btnCls).btn-small&attributes(attributes)
+		span.btn-small__inner
+			!= options.text
+

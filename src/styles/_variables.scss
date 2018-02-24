@@ -1,0 +1,35 @@
+$trans: all 0.3s ease;
+$side-padding-pc: 30px;
+$side-padding-tablet: 20px;
+$side-padding-mobile: 10px;
+$max-width-value: 940px;
+$max-width: calc(#{$max-width-value} + 2 * #{$side-padding-pc});
+$min-width: 320px;
+
+$header-height-tablet: 120px;
+$header-height-mobile: 40px;
+
+$gray-67: #676767;
+$gray-23: #232323;
+
+$gray-darkest: #1b1515;
+$gray-darken: #444444;
+$gray-dark: #565656;
+$gray: #A6A6A6;
+$gray-light: #CCC0C0;
+$gray-lightest: #EDEBED;
+
+$pink-dark: #EB275B;
+$pink: #FF0066;
+
+$green: #52A130;
+$green-light: #1DB400;
+$green-lighten: #00D162;
+$green-lightest: #00D198;
+
+$blue-lightest: #F2F8FF;
+
+$img: '../img/';
+
+$header-z-index: 100;
+$nav-z-index: $header-z-index - 1;

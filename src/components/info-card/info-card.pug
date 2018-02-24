@@ -1,0 +1,22 @@
+mixin info-card(options = {item: {img, title, subtitle, body: [{title, text}]}})
+	-
+		var item = options.item;
+
+	.info-card&attributes(attributes)
+		.info-card__item.info-card__item_head(style="background-image:url('" + img + item.img + "');")
+			.h4.mb-1.text-uppercase
+				!= item.title
+			p.text-s-const
+				!= item.subtitle
+		.info-card__item.info-card__item_body
+			each row in item.body
+				.info-card__body-row
+					.h6.mb-1
+						!= row.title
+					p.text-s.mb-0
+						!= row.text
+					//- .h6.mb-1.
+					//- 	Pick
+					//- p.text-s.
+					//- 	как правило означает выбор
+					//- 	героя или чего-либо еще в игре

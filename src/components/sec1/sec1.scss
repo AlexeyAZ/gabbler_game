@@ -1,0 +1,98 @@
+.sec1 {
+	background-image: url($img + 'sec1-bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	position: relative;
+	z-index: 1;
+
+	@include media(w1700) {
+		padding-top: 370px;
+		padding-bottom: 510px;
+	}
+
+	@include media(w1024) {
+		padding-top: calc(420px - #{$header-height-tablet});
+	}
+
+	@include media(w768) {
+		padding-top: 54px;
+		padding-bottom: 290px;
+	}
+
+	&__content-center {
+		padding-top: 120px;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding-right: 30px;
+		position: relative;
+
+		@include media(w768) {
+			display: block;
+			padding-right: 0;
+		}
+	}
+
+	&__text {
+		flex-shrink: 1;
+
+		@include media(w768) {
+			text-align: center;
+		}
+	}
+
+	&__game-icon {
+		margin-bottom: 15px;
+
+		@include media(w768) {
+			margin-bottom: 25px;
+			max-width: 60px;
+		}
+	}
+
+	&__iphone {
+		flex-shrink: 0;
+		margin-right: 20px;
+
+		@include media(w768) {
+			transform: translateX(-50%);
+			margin-right: 0;
+			position: absolute;
+			top: calc(100% + 20px);
+			left: 50%;
+		}
+	}
+
+	&__bages-mobile {
+		position: relative;
+		z-index: 1;
+
+		@include media(w768) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+	}
+
+	&__tower {
+		transform: scalex(-1);
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+
+		@include media(w1700) {
+			transform: translateX(-12%);
+			left: 0;
+		}
+
+		@include media(w768) {
+			display: none;
+		}
+	}
+}

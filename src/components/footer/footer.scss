@@ -1,0 +1,139 @@
+.footer {
+	background-color: $gray-23;
+	padding: 40px 0;
+	text-align: center;
+
+	@include media(w1024) {
+		padding: 60px 0;
+	}
+
+	@include media(w768) {
+		padding: 20px 0 30px;
+	}
+
+	&__logo {
+		margin-bottom: 40px;
+
+		@include media(w1024) {
+			margin-bottom: 20px;
+		}
+
+		@include media(w768) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		font-weight: bold;
+		margin-bottom: 50px;
+		padding: 0 120px;
+
+		@include media(w1024) {
+			font-size: 18px;
+			margin-bottom: 60px;
+			padding: 0 40px;
+		}
+
+		@include media(w768) {
+			display: block;
+			margin-bottom: 50px;
+			padding: 0;
+		}
+	}
+
+	&__nav-item {
+
+		@include media(w768) {
+			margin-bottom: 18px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__nav-link {
+		transition: $trans;
+		color: white;
+
+		&:hover {
+			color: $pink;
+		}
+	}
+
+	&__bottom {
+		@include text-s;
+		display: flex;
+		align-items: center;
+
+		@include media(w1024) {
+			flex-flow: wrap;
+			justify-content: center;
+		}
+
+		@include media(w768) {
+			flex-flow: column nowrap;
+		}
+	}
+
+	&__bottom-item {
+		flex-grow: 1;
+		flex-basis: 0;
+		flex-shrink: 0;
+
+		@include media(w1024) {
+			flex-grow: 0;
+			flex-basis: auto;
+		}
+
+		&:first-child {
+			text-align: left;
+
+			@include media(w1024) {
+				flex-basis: 100%;
+				order: 4;
+				text-align: center;
+				padding-top: 20px;
+			}
+
+			@include media(w768) {
+				padding-top: 0;
+			}
+		}
+
+		&:nth-child(2) {
+
+			@include media(w1024) {
+				text-align: right;
+				padding-right: 30px;
+			}
+
+			@include media(w768) {
+				padding-right: 0;
+			}
+		}
+
+		&:last-child {
+			text-align: right;
+
+			@include media(w1024) {
+				text-align: left;
+			}
+		}
+
+		@include media(w768) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__social {
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	&__gabbler-logo {
+		display: block;
+	}
+}

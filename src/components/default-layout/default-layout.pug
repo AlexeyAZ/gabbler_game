@@ -1,0 +1,34 @@
+doctype html
+
+include ../../includes/_mixins
+include ../../includes/_variables
+
+include ../container/container
+include ../clouds/clouds
+include ../btn/btn
+include ../social/social
+include ../nav/nav
+include ../iphone/iphone
+
+- var title = 'Project title'
+
+
+block vars
+
+
+html
+	head
+		meta(charset="utf-8")
+		meta(name="description", content="")
+		meta(name="viewport", content="width=device-width, initial-scale=1, minimal-ui")
+		title #{title}
+		link(rel="icon" type="image/png" href="favicon.png" sizes="16x16")
+		link(rel="stylesheet", href="styles/vendor.css?v=" + Date.now())
+		link(rel="stylesheet", href="styles/main.css?v=" + Date.now())
+	body
+		include ../svg/svg
+		.wrap
+			+nav.js-nav
+			block content
+		script(src="scripts/vendor.js?v=" + Date.now())
+		script(src="scripts/app.js?v=" + Date.now())

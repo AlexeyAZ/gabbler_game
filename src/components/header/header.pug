@@ -1,0 +1,27 @@
+include ../logo/logo
+
+mixin headerLogo
+	a(href="").header__logo-link&attributes(attributes)
+		img(src=img + 'gabbler-labs-logo.svg').header__logo-icon
+
+mixin header()
+	.header&attributes(attributes)
+		.header__wrapper
+			+logo.header__logo-link.header__logo-link_outer
+			a(href="").header__menu-btn
+				img(src=img + 'menu-icon.svg').header__menu-btn-icon
+			+container().header__container
+				.header__item.header__item_logo
+					+logo.header__logo-link.header__logo-link_inner
+				.header__spacer
+				.header__item.header__item_social
+					+social({}).header__social
+				.header__item.header__item_register
+					-
+						var note = 'Нас уже: <span class="color-pink">2 423  человек</span>'
+					+btn({href: '/'}).header__register-btn
+					.h5.color-black.header__people-count
+						|Нас уже:
+						|
+						span.color-pink.
+							2 423 человек

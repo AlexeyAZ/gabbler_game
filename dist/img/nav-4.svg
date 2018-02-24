@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="10712.125 3628.984 174.375 117.578">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.047" y1="0.977" x2="1.042" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#34fff8" stop-opacity="0.431"/>
+      <stop offset="0.485" stop-color="#17bf60" stop-opacity="0.388"/>
+      <stop offset="1" stop-color="#53ff8c" stop-opacity="0.341"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_3273" data-name="Path 3273" class="cls-1" d="M-97.031-57.109q0,29.922-9.8,44.3t-30.2,14.375q-19.766,0-29.8-14.844t-10.039-43.828q0-30.234,9.766-44.57t30.078-14.336q19.766,0,29.883,15T-97.031-57.109Zm-55.859,0q0,21.016,3.633,30.117t12.227,9.1q8.438,0,12.188-9.219t3.75-30q0-21.016-3.789-30.2t-12.148-9.18q-8.516,0-12.187,9.18T-152.891-57.109ZM-2.5-23.672H-16.25V0H-39.844V-23.672h-48.75v-16.8l50.078-73.75H-16.25v71.8H-2.5Zm-37.344-18.75V-61.8q0-4.844.391-14.062t.625-10.7h-.625a87.125,87.125,0,0,1-6.953,12.5L-67.344-42.422Z" transform="translate(10889 3745)"/>
+</svg>

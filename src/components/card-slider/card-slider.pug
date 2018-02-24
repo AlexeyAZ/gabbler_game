@@ -1,0 +1,7 @@
+mixin card-slider()
+	.card-slider&attributes(attributes)
+		.card-slider__container
+			each item, index in ['action-img.png', 'mmorpg-img.png', 'moba-img.png', 'relax-img.png', 'sec3-castle.png', 'sec1-tower.png', 'world-castle-icon.png']
+				.card-slider__slide(style="background-image:url(" + img + item + ");")
+					= index
+		.card-slider__nav

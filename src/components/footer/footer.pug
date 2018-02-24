@@ -1,0 +1,21 @@
+include ../logo/logo
+include ../social/social
+
+
+mixin footer()
+	.footer&attributes(attributes)
+		+container
+			//- +logo({color: 'white'}).footer__logo
+			ul.footer__nav
+				each item in navList
+					li.footer__nav-item
+						a(href=item.link).footer__nav-link
+							= item.name
+			.footer__bottom
+				.footer__bottom-item
+					p.text-s-const.mb-0.
+						©2018 Gabbler. All rights reserved.
+				.footer__bottom-item
+					+social({color: 'white', size: 's'}).footer__social
+				.footer__bottom-item
+					+gabblerLogo.footer__gabbler-logo

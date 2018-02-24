@@ -1,0 +1,38 @@
+.load-badges {
+
+	&__list {
+		display: flex;
+
+		@include media(w768) {
+			background-color: white;
+			justify-content: center;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+	}
+	
+	&__list-link {
+		display: block;
+		margin-bottom: 10px;
+
+		&:first-child {
+			margin-right: 30px;
+
+			@include media(w768) {
+				margin-right: 15px;
+			}
+		}
+
+		@include media(w768) {
+			margin: 0 15px;
+		}
+	}
+
+	&__list-img {
+		display: block;
+
+		@include media(w768) {
+			max-height: 37px;
+		}
+	}
+}

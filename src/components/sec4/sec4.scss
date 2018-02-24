@@ -1,0 +1,36 @@
+.sec4 {
+	background-image: url($img + 'sec4-bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	color: white;
+	// padding-top: 140px;
+	// padding-bottom: 50px;
+	position: relative;
+
+	@include media(w1700) {
+		padding-top: 200px;
+		padding-bottom: 250px;
+	}
+
+	@include media(w768) {
+		display: none;
+	}
+
+	&__container {
+		z-index: 2;
+	}
+
+	&__slider-cards {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__slider-card {
+		width: calc(100% / 3 - 40px / 3);
+	}
+
+	&__clouds {
+		z-index: 1;
+	}
+}

@@ -1,0 +1,73 @@
+.sec3 {
+	background-image: url($img + 'sec3-bg-rect.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right top;
+	color: $gray-67;
+	// margin-top: -18vw;
+	// padding-top: 17.5vw;
+	// padding-bottom: 230px;
+	position: relative;
+
+	@include media(w1700) {
+		padding-top: 320px;
+		padding-bottom: 320px;
+	}
+
+	// @include media(w1280) {
+	// 	margin-top: -20vw;
+	// }
+
+	@include media(w1024) {
+		background-image: url($img + 'sec3-bg-tablet.png');
+		background-size: cover;
+		// margin-top: -35vw;
+		padding-top: 36vw;
+		padding-bottom: 160px;
+	}
+
+	@media (max-width: 850px) {
+		// margin-top: -40vw;
+	}
+
+	@include media(w768) {
+		background-image: none;
+		background-color: white;
+		margin-top: 0;
+		padding-top: 35px;
+		padding-bottom: 30px;
+	}
+
+	&__text-gallery {
+		z-index: 2;
+	}
+
+	&__castle {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+
+		@include media(w1600) {
+			right: auto;
+			left: 60%;
+		}
+
+		@include media(w1024) {
+			display: none;
+		}
+	}
+
+	&__clouds {
+		transform: translateY(50%);
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+
+		@include media(w768) {
+			display: none;
+		}
+	}
+}

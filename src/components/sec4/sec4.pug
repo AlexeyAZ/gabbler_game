@@ -1,0 +1,93 @@
+include ../info-card/info-card
+
+
+mixin sec4()
+	-
+		var sec4Slider = {
+			film: {
+				name: 'Сериалов'
+			},
+			song: {
+				name: 'Песен'
+			},
+			game: {
+				name: 'Игр',
+				content: [{
+					img: 'moba-img.png',
+					title: 'MOBA GAME',
+					subtitle: 'Multiplayer Online Battle Arena «многопользовательская онлайновая боевая арена»',
+					body: [
+						{
+							title: 'High ground (HG)',
+							text: 'возвышенность над какой-либо областью в игре'
+						},
+						{
+							title: 'Pick',
+							text: 'как правило означает выбор героя или чего-либо еще в игре'
+						},
+						{
+							title: 'Well players (WP)',
+							text: 'хорошие игроки - обычно пишется после матча.'
+						},
+						{
+							title: 'Abuse',
+							text: 'Злоупотребление - игровая ситуация, при которой игроки используют баги игры, или дисбаланс героев для собственной выгоды'
+						}
+					]
+				},
+				{
+					img: 'action-img.png',
+					title: 'ACTION',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности быстро принимать тактические решения.',
+					body: [
+						{
+							title: 'Lag',
+							text: 'Запаздывание, задержка – задержка в работе игры,проявляющаяся в виде временного подвисания игрового процесса.'
+						},
+						{
+							title: 'AIM',
+							text: '(Аим, в переводе с англ. «цель, прицеливаться») умение человека, играющего в шутеры,быстро и точно наводить прицел на цель.'
+						},
+						{
+							title: 'Plant',
+							text: 'Место закладки бомбы или призыв к тиммэйту устанавливать бомбу.'
+						}
+					]
+				},
+				{
+					img: 'mmorpg-img.png',
+					title: 'MMORPG',
+					subtitle: 'Massively multiplayer online role-playing game компьютерная игра, в которой жанр ролевых игр совмещается с жанром массовых онлайн-игр.',
+					body: [
+						{
+							title: 'Over buff',
+							text: 'Овербаф гровая ситуация, при которой один бафф персонажа вытесняется другим из-за ограничения на количество одновременно.'
+						},
+						{
+							title: 'Overheal',
+							text: 'Оверхил «сверхлечения» - количество очков здоровья, восстановленных персонажу, сверх его максимального здоровья'
+						},
+						{
+							title: 'Player vs environment (PVE)',
+							text: 'стиль игры, при котором основной целью является выполнение квестов, убийство НПС (неигровых персонажей - монстров)'
+						}
+					]
+				}]
+			}
+		};
+
+	.sec4&attributes(attributes)
+		//- .content-center
+		+container().sec4__container
+			h2.
+				СЛОВА ИЗ ПОПУЛЯРНЫХ
+			.sec4__slider
+				.sec4__slider-nav.mb-4
+					each value, key in sec4Slider
+						//- +btnSmall({text: 'Сериалов'})
+						+btnSmall({text: value.name, bg: 'blue'}).mr-2
+					//- +btnSmall({text: 'Сериалов', bg: 'blue', active: true})
+				.sec4__slider-cards
+					each item in sec4Slider.game.content
+						+info-card({item: item}).sec4__slider-card
+		+clouds.sec4__clouds

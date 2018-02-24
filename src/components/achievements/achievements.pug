@@ -1,0 +1,10 @@
+mixin achievements()
+	.achievements&attributes(attributes)
+		img(src=img + 'sec2-bg-top.png').achievements__blue-bg-img.d-none.d-pc-block
+		img(src=img + 'sec2-bg-top-line.png').achievements__blue-bg-line.d-none.d-pc-block
+
+		img(src=img + 'sec2-bg-top-tablet.png').achievements__blue-bg-img.d-pc-none
+		img(src=img + 'sec2-bg-top-line-tablet.png').achievements__blue-bg-line.d-pc-none
+
+		each item, index in achievements
+			+char(item)(class="achievements__char achievements__char_" + (index + 1))

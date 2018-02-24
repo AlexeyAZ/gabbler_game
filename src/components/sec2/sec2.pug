@@ -1,0 +1,17 @@
+include ../text-gallery/text-gallery
+
+
+mixin sec2
+	.sec2&attributes(attributes)
+		+container().sec2__container
+			+text-gallery({version: 0}).sec2__text-gallery
+			.sec2__bottom
+				.sec2__bottom-gallery
+					img(src=img + 'clouds.png').sec2__bottom-clouds
+
+				.ta-center
+					h2.sec2__bottom-title.
+						СРАЖАЙСЯ С ДРУЗЬЯМИ<br>
+						ЗА ПЕРВОЕ МЕСТО
+					+btn({href: '/'})
+		+clouds.sec2__clouds

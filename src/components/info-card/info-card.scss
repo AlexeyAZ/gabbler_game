@@ -1,0 +1,53 @@
+.info-card {
+	background-color: $gray-darkest;
+	border-radius: 24px;
+	box-shadow: 16px 17px 40px rgba(23,23,23,0.5);
+	overflow: hidden;
+	text-align: left;
+	
+	&__item {
+		padding-left: 20px;
+		padding-right: 20px;
+		
+		&_head {
+			background-image: url($img + 'moba-img.png');
+			background-position: center top;
+			background-size: cover;
+			background-repeat: no-repeat;
+			border-bottom: 2px solid black;
+			padding-top: 60px;
+			position: relative;
+			height: 220px;
+			z-index: 1;
+
+			@include media(w768) {
+				padding-top: 20px;
+				height: 126px;
+			}
+
+			&:before {
+				content: "";
+				background-image: linear-gradient(to top, rgba(18, 18, 41, 1), rgba(81, 105, 179, 0.35));
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				z-index: -1;
+			}
+		}
+
+		&_body {
+			padding-top: 15px;
+			padding-bottom: 20px;
+		}
+	}
+
+	&__body-row {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

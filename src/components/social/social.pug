@@ -1,0 +1,28 @@
+mixin social(options={color, size})
+	-
+		var social = [
+			{
+				name: 'fb',
+				href: ''
+			},
+			{
+				name:'vk',
+				href: ''
+			},
+			{
+				name: 'youtube',
+				href: ''
+			}];
+
+	.social&attributes(attributes)
+		-
+			var color = typeof options.color !== 'undefined' ? '-' + options.color : '';
+			var size = typeof options.size !== 'undefined' ? 'social__list-icon_size_' + options.size : '';
+			var itemCls = typeof options.size !== 'undefined' ? 'social__list-item_' + options.size : '';
+
+		ul.social__list
+			each item in social
+				li(class=itemCls).social__list-item
+					a(href=item.href).social__list-link
+						+icon(item.name + color)(class="social__list-icon_" + item.name + ' ' + size).social__list-icon
+		block

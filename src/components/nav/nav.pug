@@ -1,0 +1,11 @@
+mixin nav
+	.nav&attributes(attributes)
+		.nav__content
+			.nav__number
+				img(src=img + 'nav-1.svg').nav__number-img
+			ul.nav__list
+				each item, index in navList
+					li(data-index=index + 1).nav__list-item
+						a(href=item.link).nav__list-link
+							=item.name
+		
