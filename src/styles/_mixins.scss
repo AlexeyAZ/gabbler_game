@@ -40,8 +40,16 @@
         @media only screen and (max-width: 768px) { @content; }
     }
 
+    @else if $media == w600 {
+        @media only screen and (max-width: 600px) { @content; }
+    }
+
     @else if $media == w500 {
         @media only screen and (max-width: 500px) { @content; }
+    }
+
+    @else if $media == w400 {
+        @media only screen and (max-width: 400px) { @content; }
     }
 }
 

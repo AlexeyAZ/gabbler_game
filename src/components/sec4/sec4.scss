@@ -9,8 +9,13 @@
 	position: relative;
 
 	@include media(w1700) {
-		padding-top: 200px;
-		padding-bottom: 250px;
+		padding-top: 230px;
+		padding-bottom: 230px;
+	}
+
+	@include media(w1024) {
+		padding-top: 150px;
+		padding-bottom: 150px;
 	}
 
 	@include media(w768) {
@@ -21,16 +26,44 @@
 		z-index: 2;
 	}
 
+	&__content {
+		padding: 0 30px;
+	}
+
+	&__wrap {
+		padding-top: 120px;
+		height: 100%;
+
+		@include media(w1700) {
+			padding-top: 0;
+			height: auto;
+		}
+	}
+
+	&__slider-body {
+		position: relative;
+	}
+
 	&__slider-cards {
 		display: flex;
 		justify-content: space-between;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+
+		&_active {
+			opacity: 1;
+			position: static;
+		}
+
+		&_hide {
+			opacity: 0;
+		}
 	}
 
 	&__slider-card {
 		width: calc(100% / 3 - 40px / 3);
-	}
-
-	&__clouds {
-		z-index: 1;
 	}
 }

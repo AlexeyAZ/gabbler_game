@@ -1,0 +1,20 @@
+include ../container/container
+include ../social/social
+include ../load-badges/load-badges
+
+mixin apps-footer()
+	.apps-footer&attributes(attributes)
+		+container.apps-footer__container
+			.apps-footer__item.apps-footer__item_bages
+				+load-badges
+			.apps-footer__item
+				a(href="")
+					img(src=img + "gabbler-icon.svg").apps-footer__gabbler
+			.apps-footer__item.apps-footer__item_center
+				a(href="")
+					img(src=img + "gabbler-labs-logo-white.svg").apps-footer__gabbler-labs
+			.apps-footer__item
+				+social({color: 'white', size: 's'}).apps-footer__social
+		+container
+			p.text-center.mb-0.text-s.
+				©2018 Gabbler. All rights reserved.

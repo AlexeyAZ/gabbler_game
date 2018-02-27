@@ -1,0 +1,24 @@
+include ../btn/btn
+include ../input/input
+include ../modal/modal
+
+mixin register-form()
+	+modal(id=registerFormId)
+		.register-form&attributes(attributes)
+			img(src=img + 'trio.png').register-form__trio
+			.register-form__body
+				a(href="", data-close-modal).register-form__close
+					img(src=img + 'close-icon.png')
+				.register-form__overflow
+					img(src=img + 'panorama.png').register-form__panorama
+					form.register-form__form
+						p.h5.text-center.register-form__title.mb-6.
+							Прости мы ещё не запустили игру, 
+							но обязываемся держать тебя
+							в курсе друг
+						+input(placeholder="Email", type="email", required="required").mb-4.register-form__input
+						+btn({type: 'btn'}).mb-4
+						p.text-s.
+							Нажимая на регистрацию соглашаешься на обработку персональных
+							данных и принимаешь политику конфиденциальности
+

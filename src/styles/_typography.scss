@@ -5,18 +5,47 @@ h1, h2, h3, h4, h5, h6, p {
 @mixin h1 {
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 28px;
-	line-height: 1;
+	line-height: 1.2;
 	text-transform: uppercase;
 
 	@include media(w768) {
 		font-size: 18px;
+	}
+
+	&.middle {
+		font-size: 38px;
+
+		@include media(w768) {
+			font-size: 18px;
+		}
+
+	}
+
+	&.big {
+		font-size: 48px;
+
+		@include media(w1024) {
+			font-size: 80px;
+		}
+
+		@include media(w768) {
+			font-size: 24px;
+		}
+	}
+
+	&.big-const {
+		font-size: 48px;
+
+		@include media(w768) {
+			font-size: 24px;
+		}
 	}
 }
 
 @mixin h2 {
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 28px;
-	line-height: 1;
+	line-height: 1.2;
 	text-transform: uppercase;
 
 	@include media(w768) {
@@ -31,6 +60,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 	@include media(w768) {
 		font-size: 18px;
+	}
+
+	&.const {
+
+		@include media(w768) {
+			font-size: 28px;
+		}
 	}
 }
 
@@ -60,6 +96,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
 	@include h1;
+	line-height: 1.2;
 }
 
 h2 {

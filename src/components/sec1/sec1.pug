@@ -6,14 +6,17 @@ include ../header/header
 mixin sec1()
 	.sec1&attributes(attributes)
 		+header
+		+nav(1)
 		.content-center.sec1__content-center
 			+container
 				.sec1__content
 					+iphone.sec1__iphone
+						//- iframe(src="https://www.youtube.com/embed/i-kVeQOmMSo?autoplay=1&controls=0&enablejsapi=1&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+						#sec1Video.sec1__iphone-video
 					.sec1__text
 						img(src=img + 'world-castle-icon.png').sec1__game-icon
 						h1.color-pink-dark.
-							МОБИЛЬНАЯ ИГРА ДЛЯ<br class="d-none d-pc-inline">
+							МОБИЛЬНАЯ ИГРА ДЛЯ<br class="d-none d-tablet-inline">
 							ИЗУЧЕНИЯ АНГЛИЙСКОГО ЯЗЫКА
 						h5.color-gray-darken.mb-5.
 							СТАНЬ ГЛАВОЙ АНГЛИЙСКОГО КОРОЛЕВСТВА
@@ -21,12 +24,3 @@ mixin sec1()
 			+load-badges.d-tablet-none.sec1__bages-mobile
 			img(src=img + 'sec1-tower.png').sec1__tower
 			+clouds
-			//- .sec1__blue-bg
-				img(src=img + 'sec2-bg-top.png').sec1__blue-bg-img.d-none.d-pc-block
-				img(src=img + 'sec2-bg-top-line.png').sec1__blue-bg-line.d-none.d-pc-block
-
-				img(src=img + 'sec2-bg-top-tablet.png').sec1__blue-bg-img.d-pc-none
-				img(src=img + 'sec2-bg-top-line-tablet.png').sec1__blue-bg-line.d-pc-none
-
-				each item, index in sec1Chars
-					+char(item)(class="sec1__char sec1__char_" + (index + 1))

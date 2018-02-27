@@ -1,0 +1,24 @@
+include ../load-badges/load-badges
+
+mixin apps-window()
+	.apps-window&attributes(attributes)
+		.apps-window__head
+			.apps-window__head-actions
+				.apps-window__head-actions-item.apps-window__head-actions-item_red
+				.apps-window__head-actions-item.apps-window__head-actions-item_orange
+				.apps-window__head-actions-item.apps-window__head-actions-item_green
+		.apps-window__body
+			h2.big-const.apps-window__title.
+				СТАНЬ <span class="text-bg-green">ПРОГРАММИСТОМ</span><br> 
+				ИГРАЯ
+			p.apps-window__body-text.mb-4.
+				Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития
+			+load-badges.apps-window__load-bages.d-none.d-tablet-flex
+		.apps-window__body-shadow
+		.apps-window__shadow
+		img(src=img + 'py.png').apps-window__lang.apps-window__lang_py
+		img(src=img + 'c-sharp.png').apps-window__lang.apps-window__lang_c-sharp
+		.apps-window__scroll
+			.apps-window__scroll-slider
+				.apps-window__scroll-decor
+		block

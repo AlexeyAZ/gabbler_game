@@ -1,11 +1,18 @@
 extends ../components/default-layout/default-layout
 
 include ../components/fullpage/fullpage
+include ../components/register-form/register-form
+include ../components/mobile-nav/mobile-nav
 
 block vars
 	- var title = 'Main'
 
 block content
-	a(href="").removeFullpage.
-		сломать fullpage
+	+mobile-nav
+	+register-form
 	+fullpage
+
+block scripts
+	script(src="https://www.youtube.com/iframe_api")
+	script(src="scripts/vendor.js?v=" + Date.now())
+	script(src="scripts/app.js?v=" + Date.now())

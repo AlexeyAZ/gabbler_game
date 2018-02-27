@@ -1,0 +1,41 @@
+include ../container/container
+include ../load-badges/load-badges
+include ../hash-btn/hash-btn
+include ../apps-phone/apps-phone
+include ../apps-window/apps-window
+include ../apps-footer/apps-footer
+
+
+mixin apps()
+	.apps&attributes(attributes)
+		img(src=img + 'world-castle-icon.png').apps__header-icon
+		.apps__top
+			.apps__head-wrap
+				+container
+					h2.middle.color-gray-darkest.mb-0.
+						МОБИЛЬНАЯ ИГРА
+					h1.big.mb-0.apps__head-title.
+						ТОП <span class="apps__title-number">200</span> СЛОВ ПО ТЕМЕ
+					.mb-4.d-tablet-none
+					+hash-btn('ПРОГРАММИСТ').mb-4.apps__hash-btn
+					div
+						img(src=img + 'world-castle-icon.png').apps__icon.d-tablet-none
+					+load-badges.apps__top-bages.apps__top-bages_top
+			.apps__phone-wrap
+				+container
+					+apps-phone
+		.apps__bottom
+			img(src=img + 'apps-bottom-bg.png').apps__bottom-bg
+			img(src=img + 'c-sharp.png').apps__bottom-c-sharp
+			img(src=img + 'html.png').apps__bottom-html
+			+container
+				+load-badges.apps__top-bages.apps__top-bages_bottom
+				.apps__window-container
+					+apps-window
+			.apps__bottom-note-pc-wrap
+				img(src=img + 'apps-note.png').apps__bottom-note-pc
+				img(src=img + 'php.png').apps__bottom-php
+				img(src=img + 'ruby.png').apps__bottom-ruby
+
+			img(src=img + 'apps-note-mobile.png').apps__bottom-note-mobile
+		+apps-footer

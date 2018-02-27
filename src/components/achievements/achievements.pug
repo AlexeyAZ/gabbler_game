@@ -3,8 +3,10 @@ mixin achievements()
 		img(src=img + 'sec2-bg-top.png').achievements__blue-bg-img.d-none.d-pc-block
 		img(src=img + 'sec2-bg-top-line.png').achievements__blue-bg-line.d-none.d-pc-block
 
-		img(src=img + 'sec2-bg-top-tablet.png').achievements__blue-bg-img.d-pc-none
-		img(src=img + 'sec2-bg-top-line-tablet.png').achievements__blue-bg-line.d-pc-none
+		img(src=img + 'sec2-bg-top-tablet.png').achievements__blue-bg-img.d-none.d-tablet-block.d-pc-none
+		img(src=img + 'sec2-bg-top-line-tablet.png').achievements__blue-bg-line.d-none.d-tablet-block.d-pc-none
+
+		img(src=img + 'sec2-bg-top-mobile.png').achievements__blue-bg-img.achievements__blue-bg-img_mobile
 
 		each item, index in achievements
 			+char(item)(class="achievements__char achievements__char_" + (index + 1))

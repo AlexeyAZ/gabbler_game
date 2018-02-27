@@ -1,8 +1,10 @@
 .btn {
 	background-image: url($img + 'btn-bg.png');
 	border-radius: 100px;
+	border: none;
 	box-shadow: 0 30px 60px rgba(235, 39, 91, 0.18);
 	color: white;
+	cursor: pointer;
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 26px;
 	line-height: 1;

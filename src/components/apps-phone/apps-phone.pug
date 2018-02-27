@@ -1,0 +1,25 @@
+include ../iphone/iphone
+include ../dialog/dialog
+
+
+mixin apps-phone()
+	-
+		var langs = ['css', 'html5', 'html'];
+		var words = {
+			left: ['Argument', 'Execution', 'Explore', 'Rid'],
+			right: ['Dictionary', 'Sequence', 'Сustom', 'Folder']
+		}
+
+	.apps-phone&attributes(attributes)
+		img(src=img + 'text-langs.png').apps-phone__langs
+		img(src=img + "text-langs-tablet.png").apps-phone__bg
+		+iphone().apps-phone__iphone
+			.apps-phone__bg-img
+			each lang in langs
+				img(src=img + lang + '.png', class='apps-phone__lang_' + lang).apps-phone__lang
+			.apps-phone__words.apps-phone__words_left
+				each word in words.left
+					+dialog(word).apps-phone__words-item
+			.apps-phone__words.apps-phone__words_right
+				each word in words.right
+					+dialog(word, true).apps-phone__words-item

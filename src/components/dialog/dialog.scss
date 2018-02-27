@@ -1,0 +1,53 @@
+.dialog {
+	display: inline-block;
+	background-color: white;
+	border-radius: 50px;
+	box-shadow: 4px 13px 12px rgba(67,67,67,0.34);
+	font-weight: bold;
+	font-size: 18px;
+	color: $gray-darkest;
+	padding: 6px 20px;
+	position: relative;
+
+	@include media(w768) {
+		font-size: 8px;
+		padding: 4px 18px;
+	}
+
+	&:before {
+		content: "";
+		transform: scaleX(-1);
+		background-image: url($img + 'dialog-tail.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		bottom: -9px;
+		right: -2px;
+		height: 16px;
+		width: 23px;
+		z-index: 1;
+
+		@include media(w768) {
+			bottom: -5px;
+		}
+	}
+
+	&_reverse {
+
+		&:before {
+			transform: scaleX(1);
+			bottom: -9px;
+			right: 0;
+			left: -2px;
+
+			@include media(w768) {
+				bottom: -5px;
+			}
+		}
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 1;
+	}
+}

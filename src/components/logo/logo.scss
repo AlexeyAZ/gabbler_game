@@ -4,6 +4,11 @@
 		height: 100%;
 		width: 240px;
 
+		@include media(w1024) {
+			display: block;
+			width: 158px;
+		}
+
 		@include media(w768) {
 			display: block;
 			width: 80px;

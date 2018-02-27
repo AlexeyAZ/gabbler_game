@@ -1,0 +1,4 @@
+mixin dialog(text, reverse)
+	.dialog(class=(reverse ? 'dialog_reverse' : ''))&attributes(attributes)
+		.dialog__inner
+			=text

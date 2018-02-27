@@ -27,8 +27,7 @@ html
 		link(rel="stylesheet", href="styles/main.css?v=" + Date.now())
 	body
 		include ../svg/svg
+		.preloader
 		.wrap
-			+nav.js-nav
 			block content
-		script(src="scripts/vendor.js?v=" + Date.now())
-		script(src="scripts/app.js?v=" + Date.now())
+		block scripts

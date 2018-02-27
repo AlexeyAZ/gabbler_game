@@ -1,7 +1,18 @@
 mixin sec3()
+	-
+		var page = 3;
+
 	.sec3&attributes(attributes)
-		//- .content-center
+		+nav(page)
 		+container()
-			+text-gallery({version: 1}).sec3__text-gallery
+			+text-gallery({version: 1, page: page - 1}).sec3__text-gallery
+			.sec3__mobile-block.d-tablet-none
+				+sec-title('Развитие')
+				h2.color-pink.
+					РАЗВИВАЙ СЕБЯ И СВОЙ ЗАМОК
+					ПОЛУЧАЯ НОВЫЕ ТИТУЛЫ
+				p.
+					Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития
 		img(src=img + 'sec3-castle.png').sec3__castle
-		img(src=img + 'clouds.png').sec3__clouds
+		+clouds.sec3__clouds
+		+achievements.d-tablet-none

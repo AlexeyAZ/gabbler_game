@@ -4,42 +4,40 @@
 	background-size: cover;
 	background-position: right top;
 	color: $gray-67;
-	// margin-top: -18vw;
-	// padding-top: 17.5vw;
-	// padding-bottom: 230px;
 	position: relative;
+	z-index: 1;
 
 	@include media(w1700) {
 		padding-top: 320px;
 		padding-bottom: 320px;
 	}
 
-	// @include media(w1280) {
-	// 	margin-top: -20vw;
-	// }
-
-	@include media(w1024) {
-		background-image: url($img + 'sec3-bg-tablet.png');
-		background-size: cover;
-		// margin-top: -35vw;
-		padding-top: 36vw;
-		padding-bottom: 160px;
+	@include media(w1600) {
+		padding-top: 140px;
+		padding-bottom: 140px;
 	}
 
-	@media (max-width: 850px) {
-		// margin-top: -40vw;
+	@include media(w1024) {
+		background-size: cover;
 	}
 
 	@include media(w768) {
-		background-image: none;
+		background-image: url($img + 'sec6-bg-rect.png');
 		background-color: white;
+		background-position: center top;
+		text-align: center;
 		margin-top: 0;
-		padding-top: 35px;
+		padding-top: 60px;
 		padding-bottom: 30px;
+		padding-bottom: 280px;
 	}
 
 	&__text-gallery {
 		z-index: 2;
+
+		@include media(w768) {
+			display: none !important;
+		}
 	}
 
 	&__castle {
@@ -49,22 +47,34 @@
 		z-index: 1;
 
 		@include media(w1600) {
-			right: auto;
-			left: 60%;
+			right: 74%;
+			width: 470px;
+		}
+
+		@include media(w1280) {
+			right: 78%;
 		}
 
 		@include media(w1024) {
 			display: none;
 		}
+
+		@include media(w768) {
+			transform: translateX(-51%);
+			display: block;
+			right: auto;
+			left: 0;
+			z-index: -1;
+			height: 80%;
+			width: auto;
+		}
+
+		@include media(w500) {
+			height: 60%;
+		}
 	}
 
 	&__clouds {
-		transform: translateY(50%);
-		pointer-events: none;
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		z-index: 1;
 
 		@include media(w768) {
 			display: none;

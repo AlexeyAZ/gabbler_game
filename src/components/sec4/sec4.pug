@@ -5,10 +5,148 @@ mixin sec4()
 	-
 		var sec4Slider = {
 			film: {
-				name: 'Сериалов'
+				name: 'Сериалов',
+				content: [{
+					img: 'the_big_bang_theory.png',
+					title: 'The Big Bang Theory',
+					subtitle: '',
+					body: [
+						{
+							title: 'To freak out',
+							text: 'сильно пугать, шокировать, сводить с ума'
+						},
+						{
+							title: 'Brainiac',
+							text: 'умник, гений, ботаник (с уважением или с издевкой)'
+						},
+						{
+							title: 'Call shotgun',
+							text: 'занимать переднее сиденье'
+						},
+						{
+							title: 'Raincheck',
+							text: 'отсрочка приглашения что-то сделать, куда-то пойти и т.д.'
+						}
+					]
+				},
+				{
+					img: 'game_of_thrones.png',
+					title: 'Game of Thrones',
+					subtitle: '',
+					body: [
+						{
+							title: 'Nobles',
+							text: 'Благородные'
+						},
+						{
+							title: 'Ironwood',
+							text: 'крепкое и почти не поддающееся огню дерево'
+						},
+						{
+							title: 'Faith of the Seven',
+							text: 'Вера в Семерых'
+						},
+						{
+							title: 'Plate armor',
+							text: 'латный доспех'
+						}
+					]
+				},
+				{
+					img: 'friends.png',
+					title: 'Friends',
+					subtitle: '',
+					body: [
+						{
+							title: 'Call you up',
+							text: 'Ещё вспомню о тебе'
+						},
+						{
+							title: 'Be at one',
+							text: 'Окажусь на одной из них'
+						},
+						{
+							title: 'Regret',
+							text: 'Сожаление'
+						},
+						{
+							title: 'Plate armor',
+							text: 'латный доспех'
+						}
+					]
+				}]
 			},
 			song: {
-				name: 'Песен'
+				name: 'Песен',
+				content: [{
+					img: 'shape_of_you.png',
+					title: 'Shape of You',
+					subtitle: 'Ed Sheeran',
+					body: [
+						{
+							title: 'We push',
+							text: 'Мы отталкиваемся'
+						},
+						{
+							title: 'Take my hand',
+							text: 'Возьми мою руку'
+						},
+						{
+							title: 'Although',
+							text: 'Несмотря на то что'
+						},
+						{
+							title: 'Discovering something',
+							text: 'открывать что-то'
+						}
+					]
+				},
+				{
+					img: 'believer.png',
+					title: 'Believer',
+					subtitle: 'Imagine Dragons',
+					body: [
+						{
+							title: 'Second thing second',
+							text: 'Во-вторых'
+						},
+						{
+							title: 'I was broken',
+							text: 'Я был сломлен'
+						},
+						{
+							title: 'Singing',
+							text: 'Пение'
+						},
+						{
+							title: 'Inhibited, limited',
+							text: 'Подавляемые, сдерживаемые'
+						}
+					]
+				},
+				{
+					img: 'attention.png',
+					title: 'Attention',
+					subtitle: 'Charlie Puth',
+					body: [
+						{
+							title: 'Call you up',
+							text: 'Ещё вспомню о тебе'
+						},
+						{
+							title: 'Be at one',
+							text: 'Окажусь на одной из них'
+						},
+						{
+							title: 'Regret',
+							text: 'Сожаление'
+						},
+						{
+							title: 'Plate armor',
+							text: 'латный доспех'
+						}
+					]
+				}]
 			},
 			game: {
 				name: 'Игр',
@@ -31,7 +169,7 @@ mixin sec4()
 						},
 						{
 							title: 'Abuse',
-							text: 'Злоупотребление - игровая ситуация, при которой игроки используют баги игры, или дисбаланс героев для собственной выгоды'
+							text: ' выгоды'
 						}
 					]
 				},
@@ -50,7 +188,7 @@ mixin sec4()
 						},
 						{
 							title: 'Plant',
-							text: 'Место закладки бомбы или призыв к тиммэйту устанавливать бомбу.'
+							text: ' бомбу.'
 						}
 					]
 				},
@@ -69,25 +207,32 @@ mixin sec4()
 						},
 						{
 							title: 'Player vs environment (PVE)',
-							text: 'стиль игры, при котором основной целью является выполнение квестов, убийство НПС (неигровых персонажей - монстров)'
+							text: ' - монстров)'
 						}
 					]
 				}]
 			}
 		};
 
+		var page = 4;
+
 	.sec4&attributes(attributes)
-		//- .content-center
-		+container().sec4__container
-			h2.
-				СЛОВА ИЗ ПОПУЛЯРНЫХ
-			.sec4__slider
-				.sec4__slider-nav.mb-4
-					each value, key in sec4Slider
-						//- +btnSmall({text: 'Сериалов'})
-						+btnSmall({text: value.name, bg: 'blue'}).mr-2
-					//- +btnSmall({text: 'Сериалов', bg: 'blue', active: true})
-				.sec4__slider-cards
-					each item in sec4Slider.game.content
-						+info-card({item: item}).sec4__slider-card
-		+clouds.sec4__clouds
+		+nav(page, true)
+		.sec4__wrap
+			+container().sec4__container
+				.sec4__content
+					+sec-title(navList[page - 1].name)
+					h2.
+						СЛОВА ИЗ ПОПУЛЯРНЫХ
+					.sec4__slider
+						.sec4__slider-nav.mb-4
+							each value, key in sec4Slider
+								//- +btnSmall({text: 'Сериалов'})
+								+btnSmall({text: value.name, bg: 'blue'})(data-category=key).mr-2.sec4__slider-nav-link
+							//- +btnSmall({text: 'Сериалов', bg: 'blue', active: true})
+						.sec4__slider-body
+							each value, key in sec4Slider
+								.sec4__slider-cards(data-category=key)
+									each item in value.content
+										+info-card({item: item}).sec4__slider-card
+		+clouds

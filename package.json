@@ -49,6 +49,7 @@
     "jquery": "^3.3.1",
     "sass-module-importer": "^1.4.0",
     "scroll-to-element": "^2.0.0",
-    "scrollfeatures": "^1.8.4"
+    "scrollfeatures": "^1.8.4",
+    "scrollmagic": "^2.0.5"
   }
 }

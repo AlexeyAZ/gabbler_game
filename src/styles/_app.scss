@@ -1,15 +1,35 @@
 * {
     box-sizing: border-box;
+    
+    &::selection {
+        background-color: transparent;
+    }
 
     &:before,
     &:after {
         box-sizing: border-box;
+
+        &::selection {
+            background-color: transparent;
+        }
     }
 }
 
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    &.load {
+        overflow-y: auto;
+        
+        .preloader {
+            opacity: 0;
+            visibility: hidden;
+            z-index: 0;
+        }
+    }
 }
 
 body {
@@ -30,6 +50,11 @@ body {
     }
 }
 
+.disable-scroll {
+    overflow: hidden !important;
+    height: 100%;
+}
+
 .wrap {
     position: relative;
     
@@ -48,6 +73,17 @@ body {
     //         height: $header-height-mobile;
     //     }
     // }
+}
+
+.preloader {
+    transition: 1s ease;
+    background-color: $green-lightest;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: $preloader-z-index;
 }
 
 .removeFullpage {

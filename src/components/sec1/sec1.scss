@@ -7,28 +7,34 @@
 	z-index: 1;
 
 	@include media(w1700) {
-		padding-top: 370px;
-		padding-bottom: 510px;
+		padding-top: 210px;
+		padding-bottom: 250px;
 	}
 
 	@include media(w1024) {
-		padding-top: calc(420px - #{$header-height-tablet});
+		padding-top: calc(60px + #{$header-height-tablet});
+		padding-bottom: 140px;
+		z-index: 4;
 	}
 
 	@include media(w768) {
-		padding-top: 54px;
+		padding-top: calc(54px + #{$header-height-mobile});
 		padding-bottom: 290px;
 	}
 
 	&__content-center {
 		padding-top: 120px;
+
+		@include media(w1024) {
+			padding-top: 0;
+		}
 	}
 
 	&__content {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
-		padding-right: 30px;
+		justify-content: center;
+		// padding-right: 30px;
 		position: relative;
 
 		@include media(w768) {
@@ -67,28 +73,39 @@
 		}
 	}
 
+	&__iphone-video {
+		height: 100%;
+		width: 100%;
+	}
+
 	&__bages-mobile {
-		position: relative;
-		z-index: 1;
 
 		@include media(w768) {
+			background-color: white;
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			width: 100%;
+			z-index: 3;
 		}
 	}
 
 	&__tower {
 		transform: scalex(-1);
+		display: none;
 		position: absolute;
 		right: 0;
 		bottom: 0;
 		z-index: -1;
 
 		@include media(w1700) {
-			transform: translateX(-12%);
-			left: 0;
+			display: block;
+		}
+
+		@include media(w1280) {
+			// transform: translateX(-12%);
+			left: 48%;
+			right: auto;
 		}
 
 		@include media(w768) {

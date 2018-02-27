@@ -1,0 +1,19 @@
+.input {
+	background-color: white;
+	border-radius: 30px;
+	border: none;
+	color: black;
+	font-family: "OpenSans", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	padding: 20px;
+	width: 100%;
+
+	@include placeholder {
+		color: rgba(0,0,0,0.4);
+		font-family: "OpenSans", Arial, Helvetica, sans-serif;
+	}
+
+	@include media(w768) {
+		padding: 8px 20px;
+	}
+}

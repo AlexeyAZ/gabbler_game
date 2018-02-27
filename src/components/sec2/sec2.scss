@@ -1,4 +1,7 @@
 .sec2 {
+	$size: 6px;
+	$size-active: 10px;
+
 	background-image: url($img + 'sec2-bg-rect.png');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -8,14 +11,18 @@
 
 	@include media(w1700) {
 		padding-top: 220px;
-		padding-bottom: 14vw;
+		padding-bottom: 220px;
 	}
 
 	@include media(w1024) {
-		background-image: url($img + 'sec2-bg-bottom-tablet.png');
+		// background-image: url($img + 'sec2-bg-bottom-tablet.png');
+		background-position: center bottom;
+		padding-top: 140px;
+		padding-bottom: 140px;
 	}
 
 	@include media(w768) {
+		text-align: center;
 		padding-top: 30px;
 		padding-bottom: 0;
 	}
@@ -25,29 +32,7 @@
 		z-index: 1;
 	}
 
-	&__text-gallery {
-		margin-bottom: 30px;
-
-		@include media(w768) {
-			margin-bottom: 180px;
-		}
-	}
-
-	&__bottom {
-
-		@include media(w768) {
-			background-color: $gray-lightest;
-			margin-left: -$side-padding-mobile;
-			margin-right: -$side-padding-mobile;
-			padding-top: 400px;
-			padding-bottom: 30px;
-			padding-left: $side-padding-mobile;
-			padding-right: $side-padding-mobile;
-			position: relative;
-		}
-	}
-
-	&__bottom-gallery {
+	&__head {
 		display: none;
 
 		@include media(w768) {
@@ -55,13 +40,91 @@
 		}
 	}
 
+	&__text-gallery {
+		margin-bottom: 30px;
+
+		@include media(w768) {
+			margin-bottom: 60px;
+			display: none !important;
+		}
+	}
+
+	&__bottom {
+		display: none;
+
+		@include media(w768) {
+			display: block;
+			margin-left: -$side-padding-mobile;
+			margin-right: -$side-padding-mobile;
+			padding-bottom: 20px;
+			padding-left: $side-padding-mobile;
+			padding-right: $side-padding-mobile;
+			position: relative;
+		}
+	}
+
+	&__bottom-bg {
+		background-color: $gray-lightest;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 300px;
+		width: 100%;
+		z-index: -1;
+	}
+
 	&__bottom-clouds {
 		transform: translateY(-50%);
-		position: absolute;
+		bottom: auto;
 		top: 0;
-		left: 0;
-		max-width: 768px;
-		//max-height: 190px;
+	}
+
+	&__bottom-slider {
+		display: none;
+
+		@include media(w768) {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__slider-nav {
+		padding-top: 10px;
+	}
+
+	&__slider-nav-list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__slider-nav-item {
+		margin: 0 5px;
+
+		&_active {
+
+			.sec2__slider-nav-link {
+				background-color: $green-lighten;
+				height: $size-active;
+				width: $size-active;
+			}
+		}
+
+		&:hover {
+
+			.sec2__slider-nav-link {
+				background-color: $green-lighten;
+			}
+		}
+	}
+
+	&__slider-nav-link {
+		transition: $trans;
+		background-color: rgba(0,0,0,0.4);
+		border-radius: 50%;
+		display: block;
+		height: $size;
+		width: $size;
 	}
 
 	&__bottom-title {
@@ -73,12 +136,16 @@
 		}
 
 		@include media(w768) {
-			color: $pink-dark;
+			// color: $pink-dark;
 			margin-bottom: 0.5em;
 		}
 	}
 
 	&__clouds {
 		z-index: 2;
+
+		@include media(w768) {
+			display: none;
+		}
 	}
 }

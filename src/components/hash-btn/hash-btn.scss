@@ -1,0 +1,18 @@
+.hash-btn {
+	background-color: $green-extralight;
+	display: inline-block;
+	border-radius: 156px;
+	color: white;
+	font-size: 48px;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	text-transform: uppercase;
+	text-shadow: 3px 4px 12px rgba(115,112,112,0.4);
+	padding: 8px 30px;
+
+	@include media(w768) {
+		font-size: 24px;
+		padding: 8px 20px;
+	}
+}

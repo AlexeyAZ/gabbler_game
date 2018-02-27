@@ -38,6 +38,10 @@
 
 .color {
 
+	&-gray-darkest {
+		color: $gray-darkest;
+	}
+
 	&-gray-darken {
 		color: $gray-darken;
 	}
@@ -57,6 +61,13 @@
 	&-pink-dark {
 		color: $pink-dark;
 	}
+}
+
+.text-bg-green {
+	display: inline-block;
+	background-color: $green-extralight;
+	border-radius: 4px;
+	padding: 0 8px;
 }
 
 @for $i from 0 through 20 {
@@ -98,6 +109,13 @@
 		}
 	}
 
+	&-tablet-flex {
+
+		@media (min-width: 769px) {
+			display: flex !important;
+		}
+	}
+
 	&-pc-none {
 
 		@media (min-width: 1025px) {
@@ -119,12 +137,23 @@
 		}
 	}
 
+	&-pc-flex {
+
+		@media (min-width: 1025px) {
+			display: flex !important;
+		}
+	}
+
 	&-inline {
 		display: inline !important;
 	}
 
 	&-block {
 		display: block !important;
+	}
+
+	&-flex {
+		display: flex !important;
 	}
 }
 

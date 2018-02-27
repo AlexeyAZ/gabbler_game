@@ -1,6 +1,6 @@
 .nav {
 	display: flex;
-	position: fixed;
+	position: absolute;
 	left: 10px;
 	top: calc(50% - 15px);
 	z-index: $nav-z-index;
@@ -32,14 +32,19 @@
 	}
 
 	&__list {
+		$padding-top: 2.2em;
 		transition: 1s;
 		font-family: 'OpenSans', Arial, Helvetica, sans-serif;
 		font-weight: bold;
-		padding-top: 2.2em;
-		// position: absolute;
-		// top: 0;
-		// left: calc(100% + 20px);
+		padding-top: $padding-top;
 		white-space: nowrap;
+
+		@for $i from 1 through 6 {
+
+			&_#{$i} {
+				transform: translateY(-$i * $padding-top);
+			}
+		}
 	}
 
 	&__list-item {
@@ -76,7 +81,7 @@
 		color: $gray-darken;
 
 		&:hover {
-			color: $green-lightest;
+			color: $green-lightest !important;
 		}
 	}
 }

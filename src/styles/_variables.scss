@@ -6,7 +6,7 @@ $max-width-value: 940px;
 $max-width: calc(#{$max-width-value} + 2 * #{$side-padding-pc});
 $min-width: 320px;
 
-$header-height-tablet: 120px;
+$header-height-tablet: 80px;
 $header-height-mobile: 40px;
 
 $gray-67: #676767;
@@ -26,10 +26,18 @@ $green: #52A130;
 $green-light: #1DB400;
 $green-lighten: #00D162;
 $green-lightest: #00D198;
+$green-extralight: rgba(0,255,144,0.76);
 
 $blue-lightest: #F2F8FF;
+
+$fb-color: #485B90;
+$vk-color: #436EAB;
+$youtube-color: #F61C0D;
 
 $img: '../img/';
 
 $header-z-index: 100;
 $nav-z-index: $header-z-index - 1;
+$modal-z-index: $header-z-index + 1;
+$mobile-nav-z-index: $header-z-index + 1;
+$preloader-z-index: $header-z-index + 2;

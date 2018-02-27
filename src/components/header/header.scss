@@ -11,6 +11,7 @@
 	@include media(w1024) {
 		background-color: white;
 		padding: 0;
+		position: fixed;
 		height: $header-height-tablet;
 	}
 
@@ -47,7 +48,14 @@
 	}
 
 	&__menu-btn-icon {
-		width: 25%;
+
+		@include media(w1024) {
+			width: 40%;
+		}
+
+		@include media(w768) {
+			width: 25%;
+		}
 	}
 	
 	&__container {

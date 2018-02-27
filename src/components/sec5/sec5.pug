@@ -49,17 +49,22 @@ mixin sec5()
 			},
 		};
 
+		var page = 5;
+
 	.sec5&attributes(attributes)
 		//- .content-center
+		+nav(page)
 		+container.sec5__container
 			.sec5__item.d-none.d-tablet-block.d-pc-none
 				+load-badges
 			.sec5__item.sec5__item_slider
 				//- +card-slider.js-sec5-slider
 				.sec5__slider
+					img(src=img + 'trio.png').sec5__slider-trio
 					each item in sec5Slider.relax.content
 						+info-card({item: item}).sec5__slider-card
 			.sec5__item.sec5__item_actions
+				+sec-title(navList[page - 1].name).sec5__section-title
 				h2.sec5__title.
 					БОЛЕЕ 150 НАБОРОВ<br>
 					ДЛЯ ИЗУЧЕНИЯ

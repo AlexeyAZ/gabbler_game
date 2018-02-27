@@ -10,12 +10,12 @@ include ../footer/footer
 
 mixin fullpage()
 	.fullpage
-		+sec1(data-sec="1", data-nav-color="dark").section
-		+sec2(data-sec="2", data-nav-color="light", data-offset="-100").section
-		+sec3(data-sec="3", data-nav-color="dark").section
-		+sec4(data-sec="4", data-nav-color="light", data-offset="-100").section
-		+sec5(data-sec="5", data-nav-color="dark").section
-		+sec6.section
-		+sec7.section.fp-auto-height
-		+footer.section.fp-auto-height
-	//- +sec6(data-sec="6", data-nav-color="light")
+		+sec1(id="worldCastle").section
+		+sec2(id="evolution").section
+		+sec3(id="education").section
+		+sec4(id="words").section
+		+sec5(id="sets").section
+		+sec6(id="achievements").section
+		.section.fp-auto-height
+			+sec7
+			+footer

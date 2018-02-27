@@ -1,56 +1,8 @@
-mixin text-gallery(options={version})
-	-
-		var textGallery = [
-			[
-				{
-					title: 'Первая игра которая<br> помогает изучать язык',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Развивай и<br> захватывай замки',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Соревнуйся<br> с друзьями',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Играй как в онлайне<br> как и в офлайне',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Играй на любом<br> устройстве',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Онлайн<br> статистика',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				}
-			],
-			[
-				{
-					title: 'Сленговые<br> словообороты',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Популярные<br> наборы слов',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Наборы<br> для професий',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Создание<br> наборов',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				},
-				{
-					title: 'Качественная озвучка<br> слов и фраз',
-					text: 'Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития'
-				}
-			]
-		];
+include ../sec-title/sec-title
 
+
+mixin text-gallery(options={version, page})
+	-
 		var galleryItems = textGallery[options.version]
 
 	mixin text-list(items)
@@ -67,8 +19,8 @@ mixin text-gallery(options={version})
 
 		ul(class=listAlignCls).text-gallery__list
 			each item, index in items
-				li(class=(index === 2 ? 'text-gallery__list-item_active' : '') + ' ' + itemCls).text-gallery__list-item
-					a(href="", class=linkCls).text-gallery__list-link
+				li(class=itemCls).text-gallery__list-item
+					a(href="", class=linkCls, data-video-link=item.videoId).text-gallery__list-link
 						!= item.title
 
 	mixin text-description(items)
@@ -79,6 +31,12 @@ mixin text-gallery(options={version})
 				p
 					!= item.text
 
+	mixin video-items(items)
+		.text-gallery__videos
+			//- each item, index in items
+				.text-gallery__videos-item(id='gallery_' + options.version + '_video_' + index, data-video-link=item.videoId)
+
+
 	.text-gallery&attributes(attributes)
 
 		if options.version === 0
@@ -87,18 +45,22 @@ mixin text-gallery(options={version})
 
 			.text-gallery__item.text-gallery__item_center
 				+iphone.text-gallery__iphone
+					+video-items(galleryItems)
 					//- img(src=img + 'people.png').text-gallery__iphone-people
 
 			.text-gallery__item.text-gallery__item_description
+				+sec-title('Обучение')
 				+text-description(galleryItems)
 
 		if options.version === 1
 
 			.text-gallery__item.text-gallery__item_description
+				+sec-title(navList[options.page].name)
 				+text-description(galleryItems)
 
 			.text-gallery__item.text-gallery__item_center
 				+iphone.text-gallery__iphone
+					+video-items(items)
 			
 			.text-gallery__item.text-gallery__item_list
 				+text-list(galleryItems)

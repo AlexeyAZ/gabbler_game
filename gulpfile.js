@@ -44,8 +44,9 @@ const gulp = require('gulp'),
     typograf = require('gulp-typograf'),
     eslint = require('gulp-eslint'),
     devip = require('dev-ip'),
-    changed = require('gulp-changed');
-    webpack = require("webpack-stream");
+    changed = require('gulp-changed'),
+    webpack = require("webpack-stream"),
+    path = require("path");
 
 console.log("ip list: " + devip()); // show all ip list. Need for browsersync host option
 
@@ -83,7 +84,18 @@ gulp.task('scripts', function() {
             output: {
                 filename: 'app.js',
             },
-            devtool: 'source-map'
+            devtool: 'source-map',
+            resolve: {
+                alias: {
+                    "TweenLite": path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
+                    "TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
+                    "TimelineLite": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
+                    "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
+                    "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
+                    "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+                    "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
+                }
+            }
         }))
         .pipe(gulp.dest(folders.dist + '/scripts'))
         .pipe(bs.stream());

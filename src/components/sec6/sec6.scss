@@ -24,10 +24,15 @@
 	}
 
 	@include media(w1700) {
-		padding: 354px 0 522px;
+		padding: 200px 0 522px;
+	}
+
+	@include media(w1024) {
+		padding-bottom: 600px;
 	}
 
 	@include media(w768) {
+		display: none;
 		margin-top: -20px;
 		padding: 30px 0 20px;
 	}
@@ -59,7 +64,12 @@
 
 	&__content {
 		margin-left: auto;
-		max-width: 440px;
+		max-width: 480px;
+
+		@include media(w1024) {
+			padding-left: 20%;
+			max-width: none;
+		}
 	}
 
 	&__title {
@@ -73,6 +83,10 @@
 		position: absolute;
 		bottom: 230px;
 		right: 44%;
+
+		@include media(w1024) {
+			right: 60%;
+		}
 	}
 
 	&__achievements {

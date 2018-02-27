@@ -1,0 +1,11 @@
+extends ../components/default-layout/default-layout
+
+include ../components/apps/apps
+
+block content
+	+apps
+
+
+block scripts
+	script(src="scripts/vendor.js?v=" + Date.now())
+	script(src="scripts/app.js?v=" + Date.now())

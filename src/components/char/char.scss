@@ -4,6 +4,10 @@
 	font-size: 26px;
 	position: relative;
 
+	@include media(w768) {
+		font-size: 12px;
+	}
+
 	&_small {
 		padding-top: 40px;
 
@@ -19,6 +23,10 @@
 
 	&__img-icon {
 		display: block;
+
+		@include media(w768) {
+			width: 50px;
+		}
 	}
 
 	&__line {
@@ -30,8 +38,13 @@
 		height: calc(100% + 20px);
 		width: 1px;
 
+		@include media(w768) {
+			height: calc(100% + 10px);
+		}
+
 		&:after {
 			$size: 11px;
+			$size-mobile: 5px;
 			content: "";
 			transform: translateX(-5px);
 			background-color: white;
@@ -41,6 +54,12 @@
 			left: 0;
 			height: $size;
 			width: $size;
+
+			@include media(w768) {
+				transform: translateX(-2px);
+				height: $size-mobile;
+				width: $size-mobile;
+			}
 		}
 	}
 
@@ -60,11 +79,19 @@
 			transform: translateX(25px);
 			text-align: right;
 			right: 100%;
+
+			@include media(w768) {
+				transform: translateX(15px);
+			}
 		}
 
 		&_words {
 			transform: translateX(-25px);
 			left: 100%;
+
+			@include media(w768) {
+				transform: translateX(-15px);
+			}
 		}
 	}
 
@@ -74,5 +101,9 @@
 		font-size: 14px;
 		line-height: 1;
 		text-transform: uppercase;
+
+		@include media(w768) {
+			font-size: 6px;
+		}
 	}
 }

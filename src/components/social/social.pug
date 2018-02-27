@@ -1,4 +1,4 @@
-mixin social(options={color, size})
+mixin social(options={color, size, bg})
 	-
 		var social = [
 			{
@@ -23,6 +23,6 @@ mixin social(options={color, size})
 		ul.social__list
 			each item in social
 				li(class=itemCls).social__list-item
-					a(href=item.href).social__list-link
+					a(href=item.href, class=(options.bg ? ' social__list-link_' + item.name + ' social__list-link_bg' : '')).social__list-link
 						+icon(item.name + color)(class="social__list-icon_" + item.name + ' ' + size).social__list-icon
 		block

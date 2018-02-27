@@ -1,0 +1,209 @@
+.apps-phone {
+	position: relative;
+
+	&__langs {
+		animation: animateLangs 15s infinite ease;
+		transform: translateX(-50%);
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+
+		@include media(w1024) {
+			display: none;
+		}
+	}
+
+	&__bg {
+		display: none;
+
+		@include media(w1024) {
+			animation: animateLangsTablet 15s infinite ease;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+
+		@include media(w768) {
+			animation: animateLangs 15s infinite ease;
+			transform: translateX(-50%);
+			left: 50%;
+			max-width: 300px;
+		}
+	}
+
+	&__bg-img {
+		background-image: url($img + 'apps-iphone-img.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100%;
+	}
+	
+	&__iphone {
+		margin: 0 auto;
+		width: 280px !important;
+		z-index: 2;
+
+		@include media(w1024) {
+			width: 376px !important;
+		}
+
+		@include media(w768) {
+			width: 114px !important;
+		}
+	}
+
+	&__lang {
+		position: absolute;
+
+		@include media(w768) {
+			width: 46px;
+		}
+
+		&_css {
+			animation: animIcon1 10s infinite ease;
+			top: -28%;
+			left: -32%;
+
+			@include media(w1024) {
+				top: -26%;
+				left: 88%;
+				z-index: -1;
+			}
+		}
+
+		&_html5 {
+			animation: animIcon2 9s infinite ease 1s;
+			top: -15%;
+			left: 100%;
+			z-index: -1;
+
+			@include media(w1024) {
+				top: -22%;
+				right: 85%;
+				left: auto;
+				z-index: 0;
+			}
+
+			@include media(w768) {
+				// transform: rotate(14deg);
+				top: -24%;
+			}
+		}
+
+		&_html {
+			animation: animIcon2 12s infinite ease;
+			top: 83%;
+			left: -40%;
+			z-index: -1;
+
+			@include media(w1024) {
+				display: none;
+			}
+		}
+	}
+
+	&__words {
+		display: flex;
+		flex-flow: column;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		@include media(w1024) {
+			transform: translateY(0);
+			top: -50px;
+		}
+
+		@include media(w768) {
+			top: -10px;
+		}
+		
+		&_left {
+			right: calc(100% + 40px);
+			align-items: flex-end;
+
+			@include media(w768) {
+				right: calc(100% + 20px);
+			}
+		}
+
+		&_right {
+			left: calc(100% + 40px);
+			align-items: flex-start;
+
+			@include media(w768) {
+				left: calc(100% + 20px);
+			}
+		}
+	}
+
+	&__words-item {
+		margin-bottom: 25px;
+
+		@include media(w768) {
+			margin-bottom: 12px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@keyframes animIcon1 {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(50%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes animIcon2 {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-40%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes animateLangs {
+	0% {
+		transform: translate(-50%, 0);
+	}
+
+	50% {
+		transform: translate(-50%, 5%);
+	}
+
+	100% {
+		transform: translate(-50%, 0);
+	}
+}
+
+@keyframes animateLangsTablet {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(5%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}

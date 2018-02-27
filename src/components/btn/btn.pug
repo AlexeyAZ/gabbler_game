@@ -1,8 +1,12 @@
-mixin btn(options={type, href, text})
+mixin btn(options={type, href, text, modal})
 	if typeof options.type !== 'undefined' || options.type === 'btn'
-	a(href=(typeof options.href !== 'undefined' ? options.href : '')).btn&attributes(attributes)
-		span.btn__inner
-			!= (typeof options.text !== 'undefined' ? options.text : 'РЕГИСТРАЦИЯ')
+		button(href=(typeof options.href !== 'undefined' ? options.href : '')).btn&attributes(attributes)
+			span.btn__inner
+				!= (typeof options.text !== 'undefined' ? options.text : 'РЕГИСТРАЦИЯ')
+	else
+		a(href=(typeof options.href !== 'undefined' ? options.href : ''), data-modal=(options.modal ? options.modal : '#' + registerFormId)).btn&attributes(attributes)
+			span.btn__inner
+				!= (typeof options.text !== 'undefined' ? options.text : 'РЕГИСТРАЦИЯ')
 
 mixin btnSmall(options={type, href, text, bg, active, extend: []})
 	-
