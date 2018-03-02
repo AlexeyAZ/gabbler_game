@@ -1,7 +1,7 @@
 mixin nav(page, light)
 	.nav(class=(light ? 'light' : ''))&attributes(attributes)
 		.nav__content
-			.nav__number
+			.nav__number(class="nav__number_" + page)
 				img(src=img + 'nav-' + page + '.svg').nav__number-img
 			ul(class="nav__list_" + page).nav__list
 				each item, index in navList

@@ -4,6 +4,15 @@ include ../components/fullpage/fullpage
 include ../components/register-form/register-form
 include ../components/mobile-nav/mobile-nav
 
+block cdn
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.min.css" />
+
+	<script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.min.js"></script>
+
+	script(src="https://www.youtube.com/iframe_api")
+
 block vars
 	- var title = 'Main'
 
@@ -13,6 +22,6 @@ block content
 	+fullpage
 
 block scripts
-	script(src="https://www.youtube.com/iframe_api")
-	script(src="scripts/vendor.js?v=" + Date.now())
-	script(src="scripts/app.js?v=" + Date.now())
+	
+	//- script(src="scripts/vendor.js?v=" + Date.now())
+	script(src="scripts/app.js?v=" + Date.now() defer)

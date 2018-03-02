@@ -33,20 +33,135 @@ mixin sec5()
 				}]
 			},
 			marketer: {
-				name: 'Маркетолог'
+				name: 'Маркетолог',
+				content: [{
+					img: 'relax-img.png',
+					title: 'Маркетолог',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности.',
+					body: [
+						{
+							title: 'Beach',
+							text: 'пляж, отмель, взморье, галька, отлогий морской берег'
+						},
+						{
+							title: 'Way to the sea',
+							text: 'Дорога к морю'
+						},
+						{
+							title: 'Hotel',
+							text: 'Отель'
+						},
+						{
+							title: 'Bus stop',
+							text: 'Автобусная остановка, остановка автобуса'
+						}
+					]
+				}]
 			},
 			teacher: {
-				name: 'Учитель'
+				name: 'Учитель',
+				content: [{
+					img: 'relax-img.png',
+					title: 'Учитель',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности.',
+					body: [
+						{
+							title: 'Beach',
+							text: 'пляж, отмель, взморье, галька, отлогий морской берег'
+						},
+						{
+							title: 'Way to the sea',
+							text: 'Дорога к морю'
+						},
+						{
+							title: 'Hotel',
+							text: 'Отель'
+						},
+						{
+							title: 'Bus stop',
+							text: 'Автобусная остановка, остановка автобуса'
+						}
+					]
+				}]
 			},
 			programmer: {
-				name: 'Программист'
+				name: 'Программист',
+				content: [{
+					img: 'relax-img.png',
+					title: 'Программист',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности.',
+					body: [
+						{
+							title: 'Beach',
+							text: 'пляж, отмель, взморье, галька, отлогий морской берег'
+						},
+						{
+							title: 'Way to the sea',
+							text: 'Дорога к морю'
+						},
+						{
+							title: 'Hotel',
+							text: 'Отель'
+						},
+						{
+							title: 'Bus stop',
+							text: 'Автобусная остановка, остановка автобуса'
+						}
+					]
+				}]
 			},
 			designer: {
-				name: 'Дизайнер'
+				name: 'Дизайнер',
+				content: [{
+					img: 'relax-img.png',
+					title: 'Дизайнер',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности.',
+					body: [
+						{
+							title: 'Beach',
+							text: 'пляж, отмель, взморье, галька, отлогий морской берег'
+						},
+						{
+							title: 'Way to the sea',
+							text: 'Дорога к морю'
+						},
+						{
+							title: 'Hotel',
+							text: 'Отель'
+						},
+						{
+							title: 'Bus stop',
+							text: 'Автобусная остановка, остановка автобуса'
+						}
+					]
+				}]
 			},
 			surgeon: {
-				name: 'Хирург'
-			},
+				name: 'Хирург',
+				content: [{
+					img: 'relax-img.png',
+					title: 'Хирург',
+					subtitle: 'В которых успех игрока в большой степени зависит от его скорости реакции и способности.',
+					body: [
+						{
+							title: 'Beach',
+							text: 'пляж, отмель, взморье, галька, отлогий морской берег'
+						},
+						{
+							title: 'Way to the sea',
+							text: 'Дорога к морю'
+						},
+						{
+							title: 'Hotel',
+							text: 'Отель'
+						},
+						{
+							title: 'Bus stop',
+							text: 'Автобусная остановка, остановка автобуса'
+						}
+					]
+				}]
+			}
 		};
 
 		var page = 5;
@@ -61,8 +176,16 @@ mixin sec5()
 				//- +card-slider.js-sec5-slider
 				.sec5__slider
 					img(src=img + 'trio.png').sec5__slider-trio
-					each item in sec5Slider.relax.content
-						+info-card({item: item}).sec5__slider-card
+					.sec5__slider-container
+						//- .sec5__slider-bg.sec5__slider-bg_bottom
+						//- .sec5__slider-bg.sec5__slider-bg_center
+						.sec5__slider-slides
+							each value, key in sec5Slider
+								each item in value.content
+									+info-card({item: item}).sec5__slider-card(data-name=key)
+								
+							//- each item in sec5Slider.relax.content
+								+info-card({item: item}).sec5__slider-card
 			.sec5__item.sec5__item_actions
 				+sec-title(navList[page - 1].name).sec5__section-title
 				h2.sec5__title.
@@ -72,7 +195,7 @@ mixin sec5()
 					Краткое описание текст рыба с другой стороны консультация с широким активом в значительной степени обуславливает создание направлений прогрессивного развития
 				.sec5__tags.mb-3
 					each value, key in sec5Slider
-						+btnSmall({text: value.name, bg: 'blue', extend: ['hashtag']}).mr-2.mb-1
+						+btnSmall({text: value.name, bg: 'blue', extend: ['hashtag']}).mr-2.mb-1(data-name=key).sec5__tags-btn
 				+load-badges.d-none.d-pc-block
 		img(src=img + 'sec5-img.png').sec5__img
 		+clouds.sec5__clouds

@@ -1,15 +1,15 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import youtubeVideo from '../../js-helpers/youtubeVideo';
 
 export default function textGallery() {
-	let galleries = document.querySelectorAll('.text-gallery');
+	let galleries = document.querySelectorAll('.tg');
 
 	if (galleries.length > 0) {
 		[...galleries].forEach(gallery => {
-			let links = gallery.querySelectorAll('.text-gallery__list-link');
-			let items = gallery.querySelectorAll('.text-gallery__list-item');
-			let description = gallery.querySelectorAll('.text-gallery__description');
-			let videos = gallery.querySelector('.text-gallery__videos');
+			let links = gallery.querySelectorAll('.tg__list-link');
+			let items = gallery.querySelectorAll('.tg__list-item');
+			let description = gallery.querySelectorAll('.tg__description');
+			let videos = gallery.querySelector('.tg__videos');
 
 			let activeIndex = 0;
 			let player;
@@ -17,7 +17,7 @@ export default function textGallery() {
 			let disableLinks = false;
 
 			[...items].forEach((item, index) => {
-				item.querySelector('.text-gallery__list-link').setAttribute('data-index', index);
+				item.querySelector('.tg__list-link').setAttribute('data-index', index);
 			});
 
 			[...links].forEach(link => {
@@ -35,8 +35,8 @@ export default function textGallery() {
 				let index = link.getAttribute('data-index');
 				activeIndex = +index;
 				let videoId = link.getAttribute('data-video-link');
-				let activeItem = gallery.querySelector('.text-gallery__list-item_active');
-				let activeDescription = gallery.querySelector('.text-gallery__description_active');
+				let activeItem = gallery.querySelector('.tg__list-item_active');
+				let activeDescription = gallery.querySelector('.tg__description_active');
 
 				let newActiveItem = items[index];
 				let newactiveDescription = description[index];
@@ -50,23 +50,23 @@ export default function textGallery() {
 				}
 
 				if (activeItem) {
-					activeItem.classList.remove('text-gallery__list-item_active');
-					newActiveItem.classList.add('text-gallery__list-item_active');
+					activeItem.classList.remove('tg__list-item_active');
+					newActiveItem.classList.add('tg__list-item_active');
 				} else {
-					items[index].classList.add('text-gallery__list-item_active');
+					items[index].classList.add('tg__list-item_active');
 				}
 
 				if (activeDescription) {
 					disableLinks = true;
 
 					$(activeDescription).fadeOut(400, () => {
-						activeDescription.classList.remove('text-gallery__description_active');
-						$(newactiveDescription).fadeIn().addClass('text-gallery__description_active');
+						activeDescription.classList.remove('tg__description_active');
+						$(newactiveDescription).fadeIn().addClass('tg__description_active');
 
 						disableLinks = false;
 					});
 				} else {
-					description[index].classList.add('text-gallery__description_active');
+					description[index].classList.add('tg__description_active');
 				}
 			}
 

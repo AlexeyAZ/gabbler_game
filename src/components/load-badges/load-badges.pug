@@ -2,15 +2,21 @@ mixin load-badges()
 	-
 		var bages = [{
 			img: 'google-play-badge.png',
-			href: '/'
+			href: '/',
+			attr: {
+				'data-modal': "#registerForm"
+			}
 		},
 		{
 			img: 'app-store-badge.png',
-			href: '/'
+			href: '/',
+			attr: {
+				'data-modal': "#registerForm"
+			}
 		}];
 
 	.load-badges&attributes(attributes)
 		.load-badges__list
 			each item in bages
-				a(href=item.href).load-badges__list-link
+				a(href=item.href).load-badges__list-link&attributes(item.attr)
 					img(src=img + item.img).load-badges__list-img

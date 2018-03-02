@@ -8,8 +8,8 @@ mixin footer()
 			//- +logo({color: 'white'}).footer__logo
 			ul.footer__nav
 				each item in navList
-					li.footer__nav-item
-						a(href=item.link).footer__nav-link
+					li(class=(item.hideMobile === true ? 'footer__nav-item_hide-mob' : '')).footer__nav-item
+						a(href=item.link, data-nav-link).footer__nav-link
 							= item.name
 			.footer__bottom
 				.footer__bottom-item

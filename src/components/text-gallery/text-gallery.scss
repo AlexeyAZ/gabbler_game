@@ -1,4 +1,4 @@
-.text-gallery {
+.tg {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,7 +27,7 @@
 			}
 		}
 
-		&:not(.text-gallery__item_center) {
+		&:not(.tg__item_center) {
 			flex-grow: 1;
 		}
 
@@ -132,7 +132,7 @@
 
 		&_active {
 
-			.text-gallery__list-link {
+			.tg__list-link {
 				opacity: 1;
 			}
 

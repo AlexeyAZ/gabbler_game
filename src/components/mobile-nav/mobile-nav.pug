@@ -5,7 +5,7 @@ mixin mobile-nav()
 		.mobile-nav__inner
 			ul.mobile-nav__list
 				each item in navList
-					li.mobile-nav__list-item
+					li(class=(item.hideMobile ? 'mobile-nav__list-item_hide-mob' : '')).mobile-nav__list-item
 						a(href=item.link, data-nav-link).mobile-nav__list-link
 							=item.name
 			+social({color: 'white', size: 's', bg: true}).mobile-nav__social

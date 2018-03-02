@@ -25,6 +25,11 @@
 		}
 	}
 
+	&__head-wrap {
+		position: relative;
+		z-index: 1;
+	}
+
 	&__head-title {
 
 		@include media(w1024) {
@@ -117,6 +122,7 @@
 	}
 
 	&__bottom-note-pc-wrap {
+		pointer-events: none;
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -158,25 +164,17 @@
 		display: none;
 		position: relative;
 		z-index: 3;
-		max-width: 765px;
+		min-width: 765px;
 		width: 100%;
 
 		@include media(w768) {
-			display: block;
-		}
-
-		@include media(w600) {
 			transform: translateX(-50%);
-			max-width: none;
+			display: block;
 			margin-left: 50%;
-			width: 150%;
 		}
 
 		@include media(w400) {
 			transform: translateX(-48%);
-			max-width: none;
-			margin-left: 50%;
-			width: 230%;
 		}
 	}
 

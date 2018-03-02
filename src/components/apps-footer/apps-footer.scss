@@ -21,6 +21,7 @@
 	}
 
 	&__item {
+		margin: 0 25px;
 
 		&_bages {
 			display: none;
@@ -42,6 +43,8 @@
 
 		@include media(w768) {
 			margin-bottom: 20px;
+			margin-left: 0;
+			margin-right: 0;
 
 			&:last-child {
 				margin-bottom: 0;

@@ -15,9 +15,9 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 			border-bottom: 2px solid black;
-			padding-top: 60px;
+			padding-top: 30px;
 			position: relative;
-			height: 220px;
+			height: 160px;
 			z-index: 1;
 
 			@include media(w768) {

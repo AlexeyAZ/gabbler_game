@@ -1,4 +1,4 @@
-.social {
+.sn {
 	$bg-size: 60px;
 	
 	&__list {
@@ -24,15 +24,15 @@
 			height: $bg-size;
 			width: $bg-size;
 
-			&.social__list-link_fb {
+			&.sn__list-link_fb {
 				background-color: $fb-color;
 			}
 
-			&.social__list-link_vk {
+			&.sn__list-link_vk {
 				background-color: $vk-color;
 			}
 
-			&.social__list-link_youtube {
+			&.sn__list-link_youtube {
 				background-color: $youtube-color;
 			}
 		}
@@ -48,11 +48,11 @@
 		&_size_s {
 			font-size: 1.5rem;
 
-			&.social__list-icon_vk {
+			&.sn__list-icon_vk {
 				font-size: 1.2rem;
 			}
 
-			&.social__list-icon_fb {
+			&.sn__list-icon_fb {
 				font-size: 1.7rem;
 			}
 		}

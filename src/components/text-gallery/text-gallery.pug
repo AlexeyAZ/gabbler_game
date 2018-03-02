@@ -7,60 +7,60 @@ mixin text-gallery(options={version, page})
 
 	mixin text-list(items)
 		-
-			var listAlignCls = options.version === 1 ? 'text-gallery__list_left' : '';
-			var itemAlignCls = options.version === 1 ? 'text-gallery__list-item_left' : '';
-			var linkAlignCls = options.version === 1 ? 'text-gallery__list-link_left' : '';
+			var listAlignCls = options.version === 1 ? 'tg__list_left' : '';
+			var itemAlignCls = options.version === 1 ? 'tg__list-item_left' : '';
+			var linkAlignCls = options.version === 1 ? 'tg__list-link_left' : '';
 
-			var itemColorCls = options.version === 1 ? 'text-gallery__list-item_gray' : '';
-			var linkColorCls = options.version === 1 ? 'text-gallery__list-link_gray' : '';
+			var itemColorCls = options.version === 1 ? 'tg__list-item_gray' : '';
+			var linkColorCls = options.version === 1 ? 'tg__list-link_gray' : '';
 
 			var itemCls = itemAlignCls + ' ' + itemColorCls;
 			var linkCls = linkAlignCls + ' ' + linkColorCls;
 
-		ul(class=listAlignCls).text-gallery__list
+		ul(class=listAlignCls).tg__list
 			each item, index in items
-				li(class=itemCls).text-gallery__list-item
-					a(href="", class=linkCls, data-video-link=item.videoId).text-gallery__list-link
+				li(class=itemCls).tg__list-item
+					a(href="", class=linkCls, data-video-link=item.videoId).tg__list-link
 						!= item.title
 
 	mixin text-description(items)
 		each item in items
-			.text-gallery__description
+			.tg__description
 				h2(class=(options.version === 1 ? 'color-pink-dark' : ''))
 					!= item.title
 				p
 					!= item.text
 
 	mixin video-items(items)
-		.text-gallery__videos
+		.tg__videos
 			//- each item, index in items
-				.text-gallery__videos-item(id='gallery_' + options.version + '_video_' + index, data-video-link=item.videoId)
+				.tg__videos-item(id='gallery_' + options.version + '_video_' + index, data-video-link=item.videoId)
 
 
-	.text-gallery&attributes(attributes)
+	.tg&attributes(attributes)
 
 		if options.version === 0
-			.text-gallery__item.text-gallery__item_list
+			.tg__item.tg__item_list
 				+text-list(galleryItems)
 
-			.text-gallery__item.text-gallery__item_center
-				+iphone.text-gallery__iphone
+			.tg__item.tg__item_center
+				+iphone.tg__iphone
 					+video-items(galleryItems)
-					//- img(src=img + 'people.png').text-gallery__iphone-people
+					//- img(src=img + 'people.png').tg__iphone-people
 
-			.text-gallery__item.text-gallery__item_description
+			.tg__item.tg__item_description
 				+sec-title('Обучение')
 				+text-description(galleryItems)
 
 		if options.version === 1
 
-			.text-gallery__item.text-gallery__item_description
+			.tg__item.tg__item_description
 				+sec-title(navList[options.page].name)
 				+text-description(galleryItems)
 
-			.text-gallery__item.text-gallery__item_center
-				+iphone.text-gallery__iphone
+			.tg__item.tg__item_center
+				+iphone.tg__iphone
 					+video-items(items)
 			
-			.text-gallery__item.text-gallery__item_list
+			.tg__item.tg__item_list
 				+text-list(galleryItems)

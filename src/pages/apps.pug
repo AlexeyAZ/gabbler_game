@@ -1,11 +1,22 @@
 extends ../components/default-layout/default-layout
 
 include ../components/apps/apps
+include ../components/register-form/register-form
+
+block cdn
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
 
 block content
+	+register-form
 	+apps
 
 
 block scripts
-	script(src="scripts/vendor.js?v=" + Date.now())
-	script(src="scripts/app.js?v=" + Date.now())
+	script(src="scripts/app.js?v=" + Date.now() defer)

@@ -4,6 +4,7 @@ include ../text-gallery/text-gallery
 mixin sec2
 	-
 		var page = 2;
+		var sliderArr = [,,,,,,]
 
 	.sec2&attributes(attributes)
 		+nav(page, true)
@@ -15,13 +16,14 @@ mixin sec2
 			+text-gallery({version: 0, page: page - 1}).sec2__text-gallery
 			.sec2__bottom
 				.sec2__bottom-slider
-					.sec2__slider-item
-						img(src=img + 'sec2-slider-img.png')
-						.sec2__slider-nav
-							ul.sec2__slider-nav-list
-								each item, index in [,,,]
-									li(class=(index === 1 ? 'sec2__slider-nav-item_active' : '')).sec2__slider-nav-item
-										a(href="").sec2__slider-nav-link
+					each item, index in sliderArr
+						.sec2__slider-item(data-name=index)
+							img(src=img + 'sec2-slider-img.png')
+				.sec2__slider-nav
+					ul.sec2__slider-nav-list
+						each item, index in sliderArr
+							li.sec2__slider-nav-item
+								a(href="", data-name=(sliderArr.length - (index + 1))).sec2__slider-nav-link
 				.sec2__bottom-bg
 					+clouds.sec2__bottom-clouds
 				.ta-center

@@ -5,3 +5,5 @@ mixin card-slider()
 				.card-slider__slide(style="background-image:url(" + img + item + ");")
 					= index
 		.card-slider__nav
+			each item, index in [,,,,,,,]
+				a(href="", data-index=index, class=(index === 0 ? 'prev' : index === 6 ? 'next' : '')).card-slider__nav-item

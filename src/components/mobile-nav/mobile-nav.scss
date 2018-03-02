@@ -47,6 +47,13 @@
 
 	&__list-item {
 		margin-bottom: 30px;
+
+		&_hide-mob {
+
+			@include media(w768) {
+				display: none;
+			}
+		}
 	}
 
 	&__list-link {

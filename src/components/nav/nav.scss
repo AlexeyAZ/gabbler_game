@@ -1,8 +1,9 @@
 .nav {
+	transform: translateY(-50%);
 	display: flex;
 	position: absolute;
 	left: 10px;
-	top: calc(50% - 15px);
+	top: 50%;
 	z-index: $nav-z-index;
 
 	@media (max-width: 1700px) {
@@ -21,9 +22,20 @@
 		}
 	}
 
+
+	$padding-top: 2em;
+	
 	&__number {
 		flex-basis: 153px;
 		margin-right: 20px;
+
+
+		@for $i from 1 through 6 {
+
+			&_#{$i} {
+				transform: translateY($i * $padding-top);
+			}
+		}
 	}
 	
 	&__number-img {
@@ -32,19 +44,11 @@
 	}
 
 	&__list {
-		$padding-top: 2.2em;
 		transition: 1s;
 		font-family: 'OpenSans', Arial, Helvetica, sans-serif;
 		font-weight: bold;
 		padding-top: $padding-top;
 		white-space: nowrap;
-
-		@for $i from 1 through 6 {
-
-			&_#{$i} {
-				transform: translateY(-$i * $padding-top);
-			}
-		}
 	}
 
 	&__list-item {

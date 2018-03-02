@@ -1,5 +1,5 @@
-import $ from "jquery";
-import fullpage from "fullpage.js";
+// import $ from "jquery";
+// import fullpage from "fullpage.js";
 
 export default function fullpageContent() {
 	const fullpageEl = document.querySelector('.fullpage');

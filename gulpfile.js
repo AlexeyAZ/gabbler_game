@@ -46,7 +46,9 @@ const gulp = require('gulp'),
     devip = require('dev-ip'),
     changed = require('gulp-changed'),
     webpack = require("webpack-stream"),
-    path = require("path");
+    path = require("path"),
+    prettify = require('gulp-prettify'),
+    htmlbeautify = require('gulp-html-beautify');
 
 console.log("ip list: " + devip()); // show all ip list. Need for browsersync host option
 
@@ -116,9 +118,7 @@ gulp.task('pug', function() {
     gulp.src(folders.src + '/pages/*.pug')
         // .pipe(changed(folders.dist, {extension: '.html'}))
         // .pipe(jadeInheritance({basedir: folders.src + '/views/pages'}))
-        .pipe(pug({
-            pretty: true
-        }))
+        .pipe(pug())
     .on('error', onError)
     .pipe(gulp.dest(folders.dist))
     .on('end', function(){
@@ -128,6 +128,7 @@ gulp.task('pug', function() {
                 enableRule: ["common/nbsp/afterNumber"],
                 disableRule: ["ru/other/phone-number"]
             }))
+            .pipe(prettify())
             .pipe(gulp.dest(folders.dist))
             .pipe(bs.stream({once: true}));
     });
